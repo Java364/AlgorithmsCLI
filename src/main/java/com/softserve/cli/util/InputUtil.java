@@ -5,8 +5,15 @@ import java.util.Scanner;
 public final class InputUtil {
     private InputUtil() {}
     public static int readIntValue(Scanner prompt) {
-        int option = prompt.nextInt();
+        final int option = prompt.nextInt();
         prompt.nextLine();
         return option;
+    }
+
+    public static boolean hasNextInt(Scanner prompt) {
+        boolean hasNextInt = prompt.hasNextInt();
+        if (!hasNextInt)
+            prompt.nextLine();
+        return hasNextInt;
     }
 }

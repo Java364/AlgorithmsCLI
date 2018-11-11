@@ -1,6 +1,6 @@
 package com.softserve.cli.option;
 
-public enum CommonAlgorithmsOption implements AlgorithmOption {
+public enum CommonAlgorithmOption implements AlgorithmOption {
     EXIT("Exit", "Exiting..."),
     SORT("Sort menu", "Entering sorting menu..."),
     FIBONACCI("Fibonacci",
@@ -11,7 +11,7 @@ public enum CommonAlgorithmsOption implements AlgorithmOption {
     private String algorithmName;
     private String algorithmDescription;
 
-    CommonAlgorithmsOption(String algorithmName, String algorithmDescription) {
+    CommonAlgorithmOption(String algorithmName, String algorithmDescription) {
         this.algorithmName = algorithmName;
         this.algorithmDescription = algorithmDescription;
     }

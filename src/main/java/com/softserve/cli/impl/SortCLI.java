@@ -1,4 +1,4 @@
-package com.softserve.cli.impl.sort;
+package com.softserve.cli.impl;
 
 import com.softserve.InvalidInputHandler;
 import com.softserve.algorithms.sort.Sort;
@@ -19,7 +19,7 @@ public class SortCLI extends AbstractCLI {
     public void run() {
         System.out.printf("%s\n%s\n", algorithmOption.getAlgorithmName(),
                           algorithmOption.getAlgorithmDescription());
-        InvalidInputHandler.promptAgainIfInvalidValue(this::promptSequence);
+        InvalidInputHandler.promptIfInvalidValue(this::promptSequence);
         System.out.printf("Sorted sequence: %s \n", Arrays.toString(sortStrategy.sort(parsedSequence)));
     }
 

@@ -1,6 +1,6 @@
 package com.softserve.cli.option;
 
-public enum SortAlgorithmsOption implements AlgorithmOption {
+public enum SortAlgorithmOption implements AlgorithmOption {
     EXIT("Exit", "Exiting..."),
     MERGE_SORT("Merge sort",
                "Replace this with the description of the algorithm"),
@@ -9,7 +9,7 @@ public enum SortAlgorithmsOption implements AlgorithmOption {
     private String algorithmName;
     private String algorithmDescription;
 
-    SortAlgorithmsOption(String algorithmName, String algorithmDescription) {
+    SortAlgorithmOption(String algorithmName, String algorithmDescription) {
         this.algorithmName = algorithmName;
         this.algorithmDescription = algorithmDescription;
     }
