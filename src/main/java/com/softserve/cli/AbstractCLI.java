@@ -1,7 +1,7 @@
-package com.demo.cli;
+package com.softserve.cli;
 
-import com.demo.cli.type.AlgorithmOption;
-import com.demo.cli.util.ArrayUtil;
+import com.softserve.cli.option.AlgorithmOption;
+import com.softserve.cli.util.ArrayUtil;
 
 import java.util.Scanner;
 

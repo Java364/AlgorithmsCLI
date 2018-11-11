@@ -1,4 +1,4 @@
-package com.demo.cli.type;
+package com.softserve.cli.option;
 
 public interface AlgorithmOption {
     String getAlgorithmName();

@@ -1,6 +1,6 @@
-package com.demo;
+package com.softserve;
 
-import com.demo.cli.impl.MainCommandLineInterface;
+import com.softserve.cli.impl.MainCommandLineInterface;
 
 import java.util.Scanner;
 

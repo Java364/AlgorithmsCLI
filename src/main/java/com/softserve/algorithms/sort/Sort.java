@@ -1,4 +1,4 @@
-package com.demo.algorithms.sort;
+package com.softserve.algorithms.sort;
 
 public interface Sort {
     int[] sort(int [] arr);

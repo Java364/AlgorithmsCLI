@@ -1,4 +1,4 @@
-package com.demo.cli.util;
+package com.softserve.cli.util;
 
 import java.util.Scanner;
 

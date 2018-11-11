@@ -1,9 +1,9 @@
-package com.demo.cli.impl.sort;
+package com.softserve.cli.impl.sort;
 
-import com.demo.InvalidInputHandler;
-import com.demo.algorithms.sort.Sort;
-import com.demo.cli.AbstractCLI;
-import com.demo.cli.type.AlgorithmOption;
+import com.softserve.InvalidInputHandler;
+import com.softserve.algorithms.sort.Sort;
+import com.softserve.cli.AbstractCLI;
+import com.softserve.cli.option.AlgorithmOption;
 
 import java.util.Arrays;
 import java.util.Scanner;

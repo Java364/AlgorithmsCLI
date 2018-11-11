@@ -1,15 +1,12 @@
-package com.demo.cli.util;
+package com.softserve.cli.util;
 
-import com.demo.cli.SequenceFormatException;
-
-import java.util.Arrays;
+import com.softserve.cli.SequenceFormatException;
 
 public class ArrayUtil {
     public static int[] parseIntegerSequence(String seq) throws SequenceFormatException {
         if (seq.contains(",") || !seq.contains(" "))
             throw new SequenceFormatException(wrongFormatMsg(seq));
         String[] stringifiedNumbers = seq.trim().replaceAll(" +", " ").split(" ");
-        System.out.println(Arrays.toString(stringifiedNumbers));
         int[] parsedSequence = new int[stringifiedNumbers.length];
         try {
             for (int i = 0; i < stringifiedNumbers.length; i++) {

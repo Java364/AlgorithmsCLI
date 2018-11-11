@@ -1,4 +1,4 @@
-package com.demo.algorithms.sort;
+package com.softserve.algorithms.sort;
 
 public class MergeSort implements Sort {
 

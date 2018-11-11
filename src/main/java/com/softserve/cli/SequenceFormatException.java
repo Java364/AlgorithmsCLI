@@ -1,4 +1,4 @@
-package com.demo.cli;
+package com.softserve.cli;
 
 public class SequenceFormatException extends Exception {
     public SequenceFormatException() {

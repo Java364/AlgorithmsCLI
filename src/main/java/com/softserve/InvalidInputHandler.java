@@ -1,9 +1,7 @@
-package com.demo;
+package com.softserve;
 
-import com.demo.cli.UserPrompt;
-import com.sun.media.sound.SoftTuning;
+import com.softserve.cli.UserPrompt;
 
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class InvalidInputHandler {

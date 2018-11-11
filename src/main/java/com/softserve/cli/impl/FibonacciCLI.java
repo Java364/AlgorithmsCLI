@@ -1,10 +1,10 @@
-package com.demo.cli.impl;
+package com.softserve.cli.impl;
 
-import com.demo.InvalidInputHandler;
-import com.demo.algorithms.Algorithms;
-import com.demo.cli.AbstractCLI;
-import com.demo.cli.CommandLineInterface;
-import com.demo.cli.util.InputUtil;
+import com.softserve.InvalidInputHandler;
+import com.softserve.algorithms.Algorithms;
+import com.softserve.cli.AbstractCLI;
+import com.softserve.cli.CommandLineInterface;
+import com.softserve.cli.util.InputUtil;
 
 import java.util.Scanner;
 

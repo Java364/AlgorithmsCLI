@@ -1,14 +1,14 @@
-package com.demo.cli.impl;
+package com.softserve.cli.impl;
 
-import com.demo.InvalidInputHandler;
-import com.demo.algorithms.sort.MergeSort;
-import com.demo.cli.type.AlgorithmOption;
-import com.demo.cli.type.CommonAlgorithmsOption;
-import com.demo.cli.type.SortAlgorithmsOption;
-import com.demo.cli.AbstractCLI;
-import com.demo.cli.CommandLineInterface;
-import com.demo.cli.impl.sort.SortCLI;
-import com.demo.cli.util.InputUtil;
+import com.softserve.InvalidInputHandler;
+import com.softserve.algorithms.sort.MergeSort;
+import com.softserve.cli.AbstractCLI;
+import com.softserve.cli.CommandLineInterface;
+import com.softserve.cli.impl.sort.SortCLI;
+import com.softserve.cli.option.AlgorithmOption;
+import com.softserve.cli.option.CommonAlgorithmsOption;
+import com.softserve.cli.option.SortAlgorithmsOption;
+import com.softserve.cli.util.InputUtil;
 
 import java.util.Scanner;
 

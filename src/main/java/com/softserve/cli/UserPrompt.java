@@ -1,4 +1,4 @@
-package com.demo.cli;
+package com.softserve.cli;
 
 @FunctionalInterface
 public interface UserPrompt {

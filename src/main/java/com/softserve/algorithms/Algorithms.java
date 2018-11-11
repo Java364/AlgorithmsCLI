@@ -1,4 +1,4 @@
-package com.demo.algorithms;
+package com.softserve.algorithms;
 
 import java.util.Arrays;
 
