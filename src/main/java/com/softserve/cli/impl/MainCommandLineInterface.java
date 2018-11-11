@@ -72,8 +72,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
             case MERGE_SORT:
                 sortCLI.setSortStrategy(new MergeSort());
                 break;
-                case COUNTING_SORT:
-                    sortCLI.setSortStrategy(new CountingSort());
+            case COUNTING_SORT:
+                sortCLI.setSortStrategy(new CountingSort());
+                break;
             }
             runCliIfExitNotRequested(exitRequested);
         }
