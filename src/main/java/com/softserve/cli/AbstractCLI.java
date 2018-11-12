@@ -9,9 +9,9 @@ public abstract class AbstractCLI implements CommandLineInterface {
     protected static final String BAD_SEQUENCE_FORMAT_MSG = "Oops can't evaluate sequence!";
     protected static final String INVALID_NUMBER_MSG = "You've entered invalid number.";
 
-    protected Scanner         prompt;
+    protected Scanner prompt;
     protected AlgorithmOption algorithmOption;
-    protected int[]           parsedSequence;
+    protected int[] parsedSequence;
 
     public AbstractCLI(Scanner prompt) {
         this.prompt = prompt;
