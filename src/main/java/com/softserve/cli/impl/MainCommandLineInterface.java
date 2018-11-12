@@ -17,16 +17,16 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
     private static final String NO_OPTION_MSG = "You've entered non-existing option.";
 
     private static final CommonAlgorithmOption[] ALGORITHMS_OPTIONS;
-    private static final SortAlgorithmOption[]   SORT_ALGORITHMS_OPTIONS;
+    private static final SortAlgorithmOption[] SORT_ALGORITHMS_OPTIONS;
 
     static {
         ALGORITHMS_OPTIONS = CommonAlgorithmOption.values();
         SORT_ALGORITHMS_OPTIONS = SortAlgorithmOption.values();
     }
 
-    private AbstractCLI     mainCLI;
+    private AbstractCLI mainCLI;
     private AlgorithmOption algorithmOption;
-    private int             userOption;
+    private int userOption;
 
     public MainCommandLineInterface(Scanner prompt) {
         super(prompt);
@@ -37,27 +37,28 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
         boolean exitRequested = false;
         while (!exitRequested) {
             InvalidInputHandler.promptIfInvalidValue(() -> promptOption(ALGORITHMS_OPTIONS),
-                                                     NO_OPTION_MSG);
+                    NO_OPTION_MSG);
             CommonAlgorithmOption commonAlgorithmOption = ALGORITHMS_OPTIONS[userOption];
             algorithmOption = commonAlgorithmOption;
             switch (commonAlgorithmOption) {
-            case EXIT:
-                exitRequested = true;
-                System.out.println(algorithmOption.getOptionDescription());
-                break;
-            case SORT:
-                System.out.println(algorithmOption.getOptionDescription());
-                mainCLI = new SortCLI(prompt);
-                callSortCLI();
-                continue;
-            case FIBONACCI:
-                mainCLI = new FibonacciCLI(prompt);
-                break;
-            case LONGEST_SUBSEQUENCE:
-                mainCLI = new LongestSubsequenceCLI(prompt);
-                break;
+                case EXIT:
+                    exitRequested = true;
+                    System.out.println(algorithmOption.getOptionDescription());
+                    break;
+                case SORT:
+                    System.out.println(algorithmOption.getOptionDescription());
+                    mainCLI = new SortCLI(prompt);
+                    callSortCLI();
+                    continue;
+                case FIBONACCI:
+                    mainCLI = new FibonacciCLI(prompt);
+                    break;
+                case LONGEST_SUBSEQUENCE:
+                    mainCLI = new LongestSubsequenceCLI(prompt);
+                    break;
                 case TILING_THE_FLOOR:
                     mainCLI = new TilingTheFloorCLI(prompt);
+                    break;
             }
             runCliIfExitNotRequested(exitRequested);
         }
@@ -68,22 +69,23 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
         boolean exitRequested = false;
         while (!exitRequested) {
             InvalidInputHandler.promptIfInvalidValue(() -> promptOption(SORT_ALGORITHMS_OPTIONS),
-                                                     NO_OPTION_MSG);
+                    NO_OPTION_MSG);
             SortAlgorithmOption sortAlgorithmOption = SORT_ALGORITHMS_OPTIONS[userOption];
             algorithmOption = sortAlgorithmOption;
             switch (sortAlgorithmOption) {
-            case EXIT:
-                exitRequested = true;
-                System.out.println(algorithmOption.getOptionDescription());
-                break;
-            case MERGE_SORT:
-                sortCLI.setSortStrategy(new MergeSort());
-                break;
-            case COUNTING_SORT:
-                sortCLI.setSortStrategy(new CountingSort());
-                break;
+                case EXIT:
+                    exitRequested = true;
+                    System.out.println(algorithmOption.getOptionDescription());
+                    break;
+                case MERGE_SORT:
+                    sortCLI.setSortStrategy(new MergeSort());
+                    break;
+                case COUNTING_SORT:
+                    sortCLI.setSortStrategy(new CountingSort());
+                    break;
                 case INSERTION_SORT:
                     sortCLI.setSortStrategy(new InsertionSort());
+                    break;
             }
             runCliIfExitNotRequested(exitRequested);
         }
@@ -96,7 +98,7 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
         }
     }
 
-    private static <E extends Enum<E> &  AlgorithmOption> void displayMenu(Enum<E>[] options) {
+    private static <E extends Enum<E> & AlgorithmOption> void displayMenu(Enum<E>[] options) {
         final AlgorithmOption[] algorithmOptions = (AlgorithmOption[]) options;
         for (int i = 0; i < options.length; i++) {
             System.out.printf("%d: %s\n", i, algorithmOptions[i].getOptionName());
