@@ -21,7 +21,7 @@ public class PathWithoutCrossingCLI extends AbstractCLI implements CommandLineIn
 		 System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                  algorithmOption.getOptionDescription());
 		 InvalidInputHandler.promptIfInvalidValue(this::promptPathWithoutCrossing, INVALID_NUMBER_MSG);
-		 int result = new PathWithoutCrossing().pathsWithoutCrossingExecute(numberPoints);
+		 int result = new PathWithoutCrossing().countPathsWithoutCrossing(numberPoints);
 		 System.out.format("We can connect %d points without crossing such ways: "
 		 		+ " %d\n", numberPoints, result);
 	}

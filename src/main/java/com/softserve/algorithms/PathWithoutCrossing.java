@@ -2,7 +2,7 @@ package com.softserve.algorithms;
 
 public class PathWithoutCrossing {
 	
-	public int pathsWithoutCrossingExecute (int numberPoints) {
+	public int countPathsWithoutCrossing (int numberPoints) {
     	if(numberPoints%2 == 1) {
     		return 0;
     	}
