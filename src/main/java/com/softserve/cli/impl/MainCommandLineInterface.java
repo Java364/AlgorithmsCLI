@@ -58,6 +58,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
             case PATH_WITHOUT_CROSSING:
             	mainCLI = new PathWithoutCrossingCLI(prompt);
             	break;
+            case WAYS_TO_SUM_USING_ARRAY:
+            	mainCLI = new WaysToSumUsingArrayCLI(prompt);
+            	break;
             }
             runCliIfExitNotRequested(exitRequested);
         }
