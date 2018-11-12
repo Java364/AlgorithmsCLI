@@ -2,7 +2,7 @@ package com.softserve.algorithms;
 
 public class WaysToSumUsingArray {
 	
-	public int waysToSumToNUsingArrayElementsWithRepetition(int array[], int n) { 
+	public int waysToSumToNUsingArrayElementsWithRepetitionExecute(int array[], int n) { 
         int count[] = new int[n + 1]; 
         count[0] = 1; 
         for (int i = 1; i <= n; i++) {
