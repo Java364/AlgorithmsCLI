@@ -2,6 +2,7 @@ package com.softserve.cli.impl;
 
 import com.softserve.algorithms.sort.CountingSort;
 import com.softserve.algorithms.sort.MergeSort;
+import com.softserve.algorithms.sort.QuickSort;
 import com.softserve.cli.AbstractCLI;
 import com.softserve.cli.CommandLineInterface;
 import com.softserve.cli.InvalidInputHandler;
@@ -76,6 +77,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
             case MERGE_SORT:
                 sortCLI.setSortStrategy(new MergeSort());
                 break;
+            case QUICK_SORT:
+            	sortCLI.setSortStrategy(new QuickSort());
+            	break;
             case COUNTING_SORT:
                 sortCLI.setSortStrategy(new CountingSort());
                 break;
