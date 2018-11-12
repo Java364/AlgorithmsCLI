@@ -1,6 +1,7 @@
 package com.softserve.cli.impl;
 
 import com.softserve.algorithms.sort.CountingSort;
+import com.softserve.algorithms.sort.InsertionSort;
 import com.softserve.algorithms.sort.MergeSort;
 import com.softserve.cli.AbstractCLI;
 import com.softserve.cli.CommandLineInterface;
@@ -55,6 +56,8 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
             case LONGEST_SUBSEQUENCE:
                 mainCLI = new LongestSubsequenceCLI(prompt);
                 break;
+                case TILING_THE_FLOOR:
+                    mainCLI = new TilingTheFloorCLI(prompt);
             }
             runCliIfExitNotRequested(exitRequested);
         }
@@ -79,6 +82,8 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
             case COUNTING_SORT:
                 sortCLI.setSortStrategy(new CountingSort());
                 break;
+                case INSERTION_SORT:
+                    sortCLI.setSortStrategy(new InsertionSort());
             }
             runCliIfExitNotRequested(exitRequested);
         }
