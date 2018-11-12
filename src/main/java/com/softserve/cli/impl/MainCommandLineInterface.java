@@ -3,6 +3,7 @@ package com.softserve.cli.impl;
 import com.softserve.algorithms.sort.CountingSort;
 import com.softserve.algorithms.sort.InsertionSort;
 import com.softserve.algorithms.sort.MergeSort;
+import com.softserve.algorithms.sort.QuickSort;
 import com.softserve.cli.AbstractCLI;
 import com.softserve.cli.CommandLineInterface;
 import com.softserve.cli.InvalidInputHandler;
@@ -59,6 +60,12 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                 case TILING_THE_FLOOR:
                     mainCLI = new TilingTheFloorCLI(prompt);
                     break;
+                case PATH_WITHOUT_CROSSING:
+                    mainCLI = new PathWithoutCrossingCLI(prompt);
+                    break;
+                case WAYS_TO_SUM_USING_ARRAY:
+                    mainCLI = new WaysToSumUsingArrayCLI(prompt);
+                    break;
             }
             runCliIfExitNotRequested(exitRequested);
         }
@@ -85,6 +92,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                     break;
                 case INSERTION_SORT:
                     sortCLI.setSortStrategy(new InsertionSort());
+                    break;
+                case QUICK_SORT:
+                    sortCLI.setSortStrategy(new QuickSort());
                     break;
             }
             runCliIfExitNotRequested(exitRequested);

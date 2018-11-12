@@ -5,7 +5,8 @@ public enum SortAlgorithmOption implements AlgorithmOption {
     MERGE_SORT("Merge sort",
                "Replace this with the description of the algorithm"),
     COUNTING_SORT("Counting Sort", "Yoy choose Counting Sort"),
-    INSERTION_SORT("Insertion sort", "You choose Insertion Sort");
+    INSERTION_SORT("Insertion sort", "You choose Insertion Sort"),
+    QUICK_SORT("Quick sort","Sort your array using Quick sort ");
 
     private String algorithmName;
     private String algorithmDescription;
