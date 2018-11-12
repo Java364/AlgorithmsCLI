@@ -17,7 +17,7 @@ public class LongestSubsequenceCLI extends AbstractCLI implements CommandLineInt
     public void run() {
         System.out.printf("%s\n%s\n", algorithmOption.getAlgorithmName(),
                           algorithmOption.getAlgorithmDescription());
-        InvalidInputHandler.promptIfInvalidValue(this::promptSequence);
+        InvalidInputHandler.promptIfInvalidValue(this::promptSequence, BAD_SEQUENCE_FORMAT_MSG);
         System.out.format("Longest subsequence %d\n", Algorithms.longestSubset(parsedSequence));
     }
 }

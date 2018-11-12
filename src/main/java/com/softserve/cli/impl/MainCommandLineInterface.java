@@ -13,6 +13,8 @@ import com.softserve.cli.util.InputUtil;
 import java.util.Scanner;
 
 public class MainCommandLineInterface extends AbstractCLI implements CommandLineInterface {
+    private static final String NO_OPTION_MSG = "You've entered non-existing option.";
+
     private static final CommonAlgorithmOption[] ALGORITHMS_OPTIONS;
     private static final SortAlgorithmOption[]   SORT_ALGORITHMS_OPTIONS;
 
@@ -21,9 +23,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
         SORT_ALGORITHMS_OPTIONS = SortAlgorithmOption.values();
     }
 
-    private AbstractCLI     mainCLI;
-    private AlgorithmOption algorithmOption;
-    private int             userOption;
+    private       AbstractCLI     mainCLI;
+    private       AlgorithmOption algorithmOption;
+    private       int             userOption;
 
     public MainCommandLineInterface(Scanner prompt) {
         super(prompt);
@@ -33,7 +35,8 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
     public void run() {
         boolean exitRequested = false;
         while (!exitRequested) {
-            InvalidInputHandler.promptIfInvalidValue(() -> promptOption(ALGORITHMS_OPTIONS));
+            InvalidInputHandler.promptIfInvalidValue(() -> promptOption(ALGORITHMS_OPTIONS),
+                                                     NO_OPTION_MSG);
             CommonAlgorithmOption commonAlgorithmOption = ALGORITHMS_OPTIONS[userOption];
             algorithmOption = ALGORITHMS_OPTIONS[userOption];
             switch (commonAlgorithmOption) {
@@ -43,11 +46,11 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                 break;
             case SORT:
                 System.out.println(algorithmOption.getAlgorithmDescription());
-                mainCLI = new SortCLI(super.prompt);
+                mainCLI = new SortCLI(prompt);
                 callSortCLI();
                 continue;
             case FIBONACCI:
-                mainCLI = new FibonacciCLI(this.prompt);
+                mainCLI = new FibonacciCLI(prompt);
                 break;
             case LONGEST_SUBSEQUENCE:
                 mainCLI = new LongestSubsequenceCLI(prompt);
@@ -61,7 +64,8 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
         SortCLI sortCLI = (SortCLI) mainCLI;
         boolean exitRequested = false;
         while (!exitRequested) {
-            InvalidInputHandler.promptIfInvalidValue(() -> promptOption(SORT_ALGORITHMS_OPTIONS));
+            InvalidInputHandler.promptIfInvalidValue(() -> promptOption(SORT_ALGORITHMS_OPTIONS),
+                                                     NO_OPTION_MSG);
             SortAlgorithmOption sortAlgorithmOption = SORT_ALGORITHMS_OPTIONS[userOption];
             algorithmOption = SORT_ALGORITHMS_OPTIONS[userOption];
             switch (sortAlgorithmOption) {
@@ -98,11 +102,8 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
         displayMenu(options);
         if (InputUtil.hasNextInt(prompt)) {
             this.userOption = InputUtil.readIntValue(prompt);
-            if (doesOptionExists(options)) {
-                return true;
-            }
+            return doesOptionExists(options);
         }
-        System.out.println("You've entered non-existing option.");
         return false;
     }
 
