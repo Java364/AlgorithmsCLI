@@ -17,12 +17,12 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     }
 
     @Override
-    public String getAlgorithmName() {
+    public String getOptionName() {
         return this.algorithmName;
     }
 
     @Override
-    public String getAlgorithmDescription() {
+    public String getOptionDescription() {
         return this.algorithmDescription;
     }
 }

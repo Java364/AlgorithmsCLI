@@ -23,7 +23,7 @@ public abstract class AbstractCLI implements CommandLineInterface {
         try {
             this.parsedSequence = ArrayUtil.parseIntegerSequence(sequence);
         } catch (SequenceFormatException afe) {
-            // TODO should be logged
+            // TODO must be logged
             return false;
         }
         return true;

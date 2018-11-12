@@ -17,8 +17,8 @@ public class FibonacciCLI extends AbstractCLI implements CommandLineInterface {
 
     @Override
     public void run() {
-        System.out.printf("%s\n%s\n", algorithmOption.getAlgorithmName(),
-                          algorithmOption.getAlgorithmDescription());
+        System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
+                          algorithmOption.getOptionDescription());
         InvalidInputHandler.promptIfInvalidValue(this::promptFibonacciNumber, INVALID_NUMBER_MSG);
         int fibResult = Algorithms.fibonacci(fibonacciPos);
         System.out.format("Fibonacci member at position %d is %d\n", fibonacciPos, fibResult);
