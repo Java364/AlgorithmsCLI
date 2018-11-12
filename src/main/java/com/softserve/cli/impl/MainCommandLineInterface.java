@@ -55,6 +55,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
             case LONGEST_SUBSEQUENCE:
                 mainCLI = new LongestSubsequenceCLI(prompt);
                 break;
+            case PATH_WITHOUT_CROSSING:
+            	mainCLI = new PathWithoutCrossingCLI(prompt);
+            	break;
             }
             runCliIfExitNotRequested(exitRequested);
         }
