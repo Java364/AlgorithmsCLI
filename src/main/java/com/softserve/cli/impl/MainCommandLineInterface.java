@@ -1,10 +1,10 @@
 package com.softserve.cli.impl;
 
-import com.softserve.InvalidInputHandler;
 import com.softserve.algorithms.sort.CountingSort;
 import com.softserve.algorithms.sort.MergeSort;
 import com.softserve.cli.AbstractCLI;
 import com.softserve.cli.CommandLineInterface;
+import com.softserve.cli.InvalidInputHandler;
 import com.softserve.cli.option.AlgorithmOption;
 import com.softserve.cli.option.CommonAlgorithmOption;
 import com.softserve.cli.option.SortAlgorithmOption;
@@ -23,9 +23,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
         SORT_ALGORITHMS_OPTIONS = SortAlgorithmOption.values();
     }
 
-    private       AbstractCLI     mainCLI;
-    private       AlgorithmOption algorithmOption;
-    private       int             userOption;
+    private AbstractCLI     mainCLI;
+    private AlgorithmOption algorithmOption;
+    private int             userOption;
 
     public MainCommandLineInterface(Scanner prompt) {
         super(prompt);

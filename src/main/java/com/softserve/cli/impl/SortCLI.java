@@ -1,8 +1,8 @@
 package com.softserve.cli.impl;
 
-import com.softserve.InvalidInputHandler;
 import com.softserve.algorithms.sort.Sort;
 import com.softserve.cli.AbstractCLI;
+import com.softserve.cli.InvalidInputHandler;
 import com.softserve.cli.option.AlgorithmOption;
 
 import java.util.Arrays;

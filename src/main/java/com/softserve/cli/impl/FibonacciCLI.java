@@ -1,10 +1,9 @@
 package com.softserve.cli.impl;
 
-import com.softserve.InvalidInputHandler;
 import com.softserve.algorithms.Algorithms;
 import com.softserve.cli.AbstractCLI;
 import com.softserve.cli.CommandLineInterface;
-import com.softserve.cli.option.AlgorithmOption;
+import com.softserve.cli.InvalidInputHandler;
 import com.softserve.cli.util.InputUtil;
 
 import java.util.Scanner;
