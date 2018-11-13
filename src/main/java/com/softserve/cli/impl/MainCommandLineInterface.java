@@ -1,9 +1,6 @@
 package com.softserve.cli.impl;
 
-import com.softserve.algorithms.sort.CountingSort;
-import com.softserve.algorithms.sort.InsertionSort;
-import com.softserve.algorithms.sort.MergeSort;
-import com.softserve.algorithms.sort.QuickSort;
+import com.softserve.algorithms.sort.*;
 import com.softserve.cli.AbstractCLI;
 import com.softserve.cli.CommandLineInterface;
 import com.softserve.cli.InvalidInputHandler;
@@ -95,6 +92,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                     break;
                 case QUICK_SORT:
                     sortCLI.setSortStrategy(new QuickSort());
+                    break;
+                case BUCKET_SORT:
+                    sortCLI.setSortStrategy(new BucketSort());
                     break;
             }
             runCliIfExitNotRequested(exitRequested);

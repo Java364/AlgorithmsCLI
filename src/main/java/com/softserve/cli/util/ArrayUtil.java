@@ -11,7 +11,7 @@ public class ArrayUtil {
         int[] parsedSequence = new int[stringifiedNumbers.length];
         try {
             for (int i = 0; i < stringifiedNumbers.length; i++) {
-                int number = (int) Double.parseDouble(stringifiedNumbers[i]);
+                int number = Integer.parseInt(stringifiedNumbers[i]);
                 parsedSequence[i] = number;
             }
         } catch (NumberFormatException nfe) {
