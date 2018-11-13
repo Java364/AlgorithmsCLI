@@ -32,7 +32,7 @@ public class BucketSort implements Sort {
 
         int[] result = new int[input.length];
         int resultIndex = 0;
-        for (Bucket bucket : buckets) { //combine numbers from buckets
+        for (Bucket bucket : buckets) {
             if (bucket.bucket.size() > 0) {
                 for (Integer i : bucket.bucket) {
                     result[resultIndex] = i;
@@ -43,6 +43,13 @@ public class BucketSort implements Sort {
         return result;
     }
 
+    /**
+     * Find bucket index in the input array
+     *
+     * @param input Array
+     * @param number from this array
+     * @return bucket index
+     */
     int returnBucketIndex(int[] input, int number) {
         int max = input[0];
         int min = input[0];
@@ -55,11 +62,16 @@ public class BucketSort implements Sort {
         }
 
         double sortingFunctionResult = (number - min) / (max - min + 1.0) * input.length;
-        int bucketIndex = (int) sortingFunctionResult;
-        return bucketIndex;
+        return (int) sortingFunctionResult;
     }
 
-    ArrayList<Integer> sortBucket(ArrayList<Integer> bucket) { //insertion sort algorithm for buckets
+    /**
+     * If bucket has more than one element, this bucket must be sorted
+     * I choose for bucket sorting Insertion algorithm
+     * @param bucket with integers
+     * @return sorted bucket
+     */
+    ArrayList<Integer> sortBucket(ArrayList<Integer> bucket) {
 
         for (int i = 1; i < bucket.size(); i++) {
             if (bucket.get(i) < bucket.get(i - 1)) {
