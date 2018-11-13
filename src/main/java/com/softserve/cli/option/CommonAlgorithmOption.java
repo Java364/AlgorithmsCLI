@@ -16,21 +16,21 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     		"The goal: To find how many ways we have "
     		+ "to represent one number with a given array of numbers");
 
-    private String algorithmName;
-    private String algorithmDescription;
+    private String optionName;
+    private String optionDescription;
 
-    CommonAlgorithmOption(String algorithmName, String algorithmDescription) {
-        this.algorithmName = algorithmName;
-        this.algorithmDescription = algorithmDescription;
+    CommonAlgorithmOption(String optionName, String optionDescription) {
+        this.optionName = optionName;
+        this.optionDescription = optionDescription;
     }
 
     @Override
     public String getOptionName() {
-        return this.algorithmName;
+        return this.optionName;
     }
 
     @Override
     public String getOptionDescription() {
-        return this.algorithmDescription;
+        return this.optionDescription;
     }
 }

@@ -1,6 +1,6 @@
 package com.softserve.cli;
 
-public class SequenceFormatException extends Exception {
+public class SequenceFormatException extends RuntimeException {
 
     public SequenceFormatException(String message) {
         super(message);

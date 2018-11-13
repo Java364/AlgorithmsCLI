@@ -8,21 +8,21 @@ public enum SortAlgorithmOption implements AlgorithmOption {
     INSERTION_SORT("Insertion sort", "You choose Insertion Sort"),
     QUICK_SORT("Quick sort","Sort your array using Quick sort ");
 
-    private String algorithmName;
-    private String algorithmDescription;
+    private String optionName;
+    private String optionDescription;
 
-    SortAlgorithmOption(String algorithmName, String algorithmDescription) {
-        this.algorithmName = algorithmName;
-        this.algorithmDescription = algorithmDescription;
+    SortAlgorithmOption(String optionName, String optionDescription) {
+        this.optionName = optionName;
+        this.optionDescription = optionDescription;
     }
 
     @Override
     public String getOptionName() {
-        return this.algorithmName;
+        return this.optionName;
     }
 
     @Override
     public String getOptionDescription() {
-        return this.algorithmDescription;
+        return this.optionDescription;
     }
 }
