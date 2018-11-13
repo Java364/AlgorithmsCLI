@@ -9,7 +9,7 @@ public class InvalidInputHandler {
         } catch (RuntimeException e) {
             // TODO exception must be logged
             System.out.println(errorMsg);
-            userPrompt.prompt();
+            promptIfInvalidValue(userPrompt, errorMsg);
         }
     }
 }
