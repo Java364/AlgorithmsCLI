@@ -30,17 +30,17 @@ public class WaysToSumUsingArrayCLI extends AbstractCLI implements CommandLineIn
 	
 	@Override
 	protected boolean promptSequence() {
-        System.out.print("Please enter sequence (e.g '1 2 3') of possitive integer numbers: ");
+        System.out.print("Please enter sequence (e.g '1 2 3') of positive integer numbers: ");
         String sequence = prompt.nextLine();
         try {
             this.parsedSequence = ArrayUtil.parseIntegerSequence(sequence);
         } catch (SequenceFormatException afe) {
             return false;
         }
-        return isPossitiveElement(this.parsedSequence);
+        return hasPositiveElement();
     }
 	
-	private boolean isPossitiveElement(int[] sequence) {
+	private boolean hasPositiveElement() {
 		for(int e: this.parsedSequence) {
         	if(e > 0 ) {
         		return true;
