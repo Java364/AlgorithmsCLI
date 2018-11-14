@@ -50,7 +50,7 @@ public class BucketSort implements Sort {
      * @param number from this array
      * @return bucket index
      */
-    int returnBucketIndex(int[] input, int number) {
+    private int returnBucketIndex(int[] input, int number) {
         int max = input[0];
         int min = input[0];
         for (int i = 1; i < input.length; i++) {
@@ -71,7 +71,7 @@ public class BucketSort implements Sort {
      * @param bucket with integers
      * @return sorted bucket
      */
-    ArrayList<Integer> sortBucket(ArrayList<Integer> bucket) {
+    private ArrayList<Integer> sortBucket(ArrayList<Integer> bucket) {
 
         for (int i = 1; i < bucket.size(); i++) {
             if (bucket.get(i) < bucket.get(i - 1)) {
@@ -88,7 +88,7 @@ public class BucketSort implements Sort {
     }
 
 
-    class Bucket {
+    private class Bucket {
 
         ArrayList<Integer> bucket = new ArrayList<>();
 

@@ -3,6 +3,9 @@ package com.softserve.algorithms.sort;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -60,21 +63,34 @@ public class BucketSortTest {
 
     @Test
     public void testBucketSorting() {
-        ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-10, -5, -2, 0, 1, 2, 5, 10));
-        ArrayList<Integer> unsorted = new ArrayList<>(Arrays.asList(10, -10, 5, -5, 2, -2, 0, 1));
+        try {
+            Method method = BucketSort.class.getDeclaredMethod("sortBucket", ArrayList.class);
+            method.setAccessible(true);
+            ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-10, -5, -2, 0, 1, 2, 5, 10));
+            ArrayList<Integer> unsorted = new ArrayList<>(Arrays.asList(10, -10, 5, -5, 2, -2, 0, 1));
 
-        ArrayList<Integer> actual = bucketSort.sortBucket(unsorted);
+            ArrayList<Integer> actual = (ArrayList<Integer>) method.invoke(bucketSort, unsorted );
 
-        assertEquals(expected, actual);
+            assertEquals(expected, actual);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e ) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     public void testReturnBucketIndex() {
-        int[] inputArray = new int[]{10, -10, 5, -5, 2, -2, 0, 1};
-        int expectedIndex = 5;
+        try {
+            Method method = BucketSort.class.getDeclaredMethod("returnBucketIndex", int[].class, int.class);
+            method.setAccessible(true);
+            int[] inputArray = {10, -10, 5, -5, 2, -2, 0, 1};
+            int expectedIndex = 5;
 
-        int actualIndex = bucketSort.returnBucketIndex(inputArray, 5);
+            int actualIndex = (int) method.invoke(bucketSort, inputArray,  5);
 
-        assertEquals(expectedIndex, actualIndex);
+            assertEquals(expectedIndex, actualIndex);
+
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e ) {
+            e.printStackTrace();
+        }
     }
 }
