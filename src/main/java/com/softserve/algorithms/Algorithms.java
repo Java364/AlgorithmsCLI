@@ -1,5 +1,6 @@
 package com.softserve.algorithms;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Algorithms {
@@ -53,5 +54,29 @@ public class Algorithms {
             }
             return count[n];
         }
+    }
+
+    /**
+     *
+     * @param n number of posts
+     * @param k number of colors
+     * @return count of ways to color n posts using k colors
+     */
+    public static BigDecimal countWaysPaintingTheFence(int n, int k) {
+        if (n < 1 || k < 1) {
+            throw new IllegalArgumentException("Posts and colors must be positive");
+        }
+
+        BigDecimal total = new BigDecimal(k);
+
+        BigDecimal same = new BigDecimal(0);
+        BigDecimal diff = new BigDecimal(k);
+
+        for (int i = 2; i <= n; i++) {
+            same = diff;
+            diff = total.multiply(new BigDecimal(k - 1));
+            total = same.add(diff);
+        }
+        return total;
     }
 }

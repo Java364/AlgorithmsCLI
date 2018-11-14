@@ -14,7 +14,9 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     		+ "and every point is connected with one other point."),
     WAYS_TO_SUM_USING_ARRAY("Ways to sum to N using array elements with repetition",
     		"The goal: To find how many ways we have "
-    		+ "to represent one number with a given array of numbers");
+    		+ "to represent one number with a given array of numbers"),
+    PAINTING_THE_FENCE("Painting the fence", "The goal: Given a fence with n posts and k colors," +
+            " find out the number of ways of painting the fence such that at most 2 adjacent posts have the same color. ");
 
     private String optionName;
     private String optionDescription;
