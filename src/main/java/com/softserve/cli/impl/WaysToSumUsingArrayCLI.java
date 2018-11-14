@@ -6,7 +6,6 @@ import com.softserve.algorithms.WaysToSumUsingArray;
 import com.softserve.cli.AbstractCLI;
 import com.softserve.cli.CommandLineInterface;
 import com.softserve.cli.InvalidInputHandler;
-import com.softserve.cli.SequenceFormatException;
 import com.softserve.cli.util.ArrayUtil;
 import com.softserve.cli.util.InputUtil;
 
@@ -33,10 +32,10 @@ public class WaysToSumUsingArrayCLI extends AbstractCLI implements CommandLineIn
         System.out.print("Please enter sequence (e.g '1 2 3') of positive integer numbers: ");
         String sequence = prompt.nextLine();
         this.parsedSequence = ArrayUtil.parseIntegerSequence(sequence);
-        return hasPositiveElement();
+        return sequenceHasNegativeNumbers();
     }
 	
-	private boolean hasPositiveElement() {
+	private boolean sequenceHasNegativeNumbers() {
 		for(int e: this.parsedSequence) {
         	if(e > 0 ) {
         		return true;
