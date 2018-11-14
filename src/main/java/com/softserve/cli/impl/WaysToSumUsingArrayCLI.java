@@ -36,12 +36,12 @@ public class WaysToSumUsingArrayCLI extends AbstractCLI implements CommandLineIn
     }
 	
 	private boolean sequenceHasNegativeNumbers() {
-		for(int e: this.parsedSequence) {
-        	if(e > 0 ) {
-        		return true;
-        	}
+		int i = 0;
+        int sequenceLength = parsedSequence.length;
+        while (i < sequenceLength && parsedSequence[i] > 0) {
+            i++;
         }
-		return false;
+		return sequenceLength == i;
 	}
 	
 	private boolean promptSum() {
