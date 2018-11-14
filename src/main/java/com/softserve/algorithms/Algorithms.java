@@ -58,23 +58,23 @@ public class Algorithms {
 
     /**
      *
-     * @param n number of posts
-     * @param k number of colors
+     * @param posts - number of posts
+     * @param colors - number of colors
      * @return count of ways to color n posts using k colors
      */
-    public static BigDecimal countWaysPaintingTheFence(int n, int k) {
-        if (n < 1 || k < 1) {
+    public static BigDecimal countWaysPaintingTheFence(int posts, int colors) {
+        if (posts < 1 || colors < 1) {
             throw new IllegalArgumentException("Posts and colors must be positive");
         }
 
-        BigDecimal total = new BigDecimal(k);
+        BigDecimal total = new BigDecimal(colors);
 
-        BigDecimal same = new BigDecimal(0);
-        BigDecimal diff = new BigDecimal(k);
+        BigDecimal same;
+        BigDecimal diff = new BigDecimal(colors);
 
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i <= posts; i++) {
             same = diff;
-            diff = total.multiply(new BigDecimal(k - 1));
+            diff = total.multiply(new BigDecimal(colors - 1));
             total = same.add(diff);
         }
         return total;
