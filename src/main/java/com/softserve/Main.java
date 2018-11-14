@@ -10,4 +10,5 @@ public class Main {
             new MainCommandLineInterface(scanner).run();
         }
     }
+
 }

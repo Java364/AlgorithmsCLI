@@ -2,8 +2,14 @@ package com.softserve.cli;
 
 public class InvalidInputHandler {
     public static void promptIfInvalidValue(UserPrompt userPrompt, String errorMsg) {
-        while (!userPrompt.prompt()) {
+        try {
+            while (!userPrompt.prompt()) {
+                System.out.println(errorMsg);
+            }
+        } catch (RuntimeException e) {
+            // TODO exception must be logged
             System.out.println(errorMsg);
+            promptIfInvalidValue(userPrompt, errorMsg);
         }
     }
 }
