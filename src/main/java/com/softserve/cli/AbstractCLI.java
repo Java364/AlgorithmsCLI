@@ -20,12 +20,7 @@ public abstract class AbstractCLI implements CommandLineInterface {
     protected boolean promptSequence() {
         System.out.print("Please enter sequence (e.g '1 2 3'): ");
         String sequence = prompt.nextLine();
-        try {
-            this.parsedSequence = ArrayUtil.parseIntegerSequence(sequence);
-        } catch (SequenceFormatException afe) {
-            // TODO must be logged
-            return false;
-        }
+        this.parsedSequence = ArrayUtil.parseIntegerSequence(sequence);
         return true;
     }
 
