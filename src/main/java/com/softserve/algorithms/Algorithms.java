@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Algorithms {
-    public static int fibonacci(int number) {
+    public static int findFibonacciMember(int number) {
         if (number < 0) {
             throw new IllegalArgumentException("Position of fibonacci number can't be negative.");
         }
