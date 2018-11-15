@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BucketSort implements Sort {
     @Override
-    public int[] sort(int[] input) {
+    public int[] sort(int[] input) throws IllegalArgumentException {
 
         if (input == null) {
             throw new IllegalArgumentException("array can not be null");
