@@ -1,5 +1,6 @@
 package com.softserve.algorithms;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Algorithms {
@@ -54,4 +55,53 @@ public class Algorithms {
             return count[n];
         }
     }
+    
+    public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int n) {
+		if (n < 1) {
+			throw new NegativeArraySizeException();
+		}
+		for (int i = 0; i < n; i++) {
+			if (high[i] < 0 || low[i] < 0) {
+				throw new IllegalArgumentException();
+			}
+		}
+		int taskDp[] = new int[n + 1];
+		taskDp[0] = 0;
+		taskDp[1] = high[0];
+		for (int i = 2; i <= n; i++)
+			taskDp[i] = findingMaxIntAlgorithm(high[i - 1] + taskDp[i - 2], low[i - 1] + taskDp[i - 1]);
+		return taskDp[n];
+	}
+    
+    public static int findingMaxIntAlgorithm(int x, int y) {
+		if (x > y) {
+			return x;
+		} else {
+			return y;
+		}
+	}
+    
+    public static BigDecimal findingMaxWaysOfPaintingTheFence(int n, int k) {
+    	if (n <= 0 || k <= 0) {
+			throw  new IllegalArgumentException();
+		}
+    	
+    	if (n == 1) {
+			BigDecimal bd = new BigDecimal(k);
+			return bd;
+		}
+
+		BigDecimal[] dp1 = new BigDecimal[n];
+		BigDecimal[] dp2 = new BigDecimal[n];
+
+		dp1[0] = BigDecimal.valueOf(0);
+		dp2[0] = BigDecimal.valueOf(k);
+		for (int i = 1; i < n; i++) {
+			dp1[i] = dp2[i - 1];
+			dp2[i] = new BigDecimal(k - 1).multiply(dp1[i - 1].add(dp2[i - 1]));
+		}
+		BigDecimal bd = dp1[n - 1].add(dp2[n - 1]);
+		
+		return bd;
+	}
 }
