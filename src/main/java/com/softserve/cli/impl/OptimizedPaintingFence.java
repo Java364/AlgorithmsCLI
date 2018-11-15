@@ -21,12 +21,12 @@ public class OptimizedPaintingFence extends AbstractCLI implements CommandLineIn
 	public void run() {
 		System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                 algorithmOption.getOptionDescription());
-        InvalidInputHandler.promptIfInvalidValue(this::promptNParamethers, INVALID_NUMBER_MSG);
-        InvalidInputHandler.promptIfInvalidValue(this::promptKParamethers, INVALID_NUMBER_MSG);
+        InvalidInputHandler.promptIfInvalidValue(this::promptNumberOfPosts, INVALID_NUMBER_MSG);
+        InvalidInputHandler.promptIfInvalidValue(this::promptNumberOfColors, INVALID_NUMBER_MSG);
         System.out.println("The MAX number of possible ways of painting the fence is " + Algorithms.findingMaxWaysOfPaintingTheFence(numberOfPosts, numberOfColors));
 	}
 	
-	private boolean promptNParamethers() {
+	private boolean promptNumberOfPosts() {
         System.out.print("Please enter number of colors (it has to be more than 0): ");
         if (!InputUtil.hasNextInt(prompt))
             return false;
@@ -34,7 +34,7 @@ public class OptimizedPaintingFence extends AbstractCLI implements CommandLineIn
         return this.numberOfPosts>=1;
     }
 
-    private boolean promptKParamethers() {
+    private boolean promptNumberOfColors() {
         System.out.print("Please enter number of posts (it has to be more than 0): ");
         if (!InputUtil.hasNextInt(prompt))
             return false;

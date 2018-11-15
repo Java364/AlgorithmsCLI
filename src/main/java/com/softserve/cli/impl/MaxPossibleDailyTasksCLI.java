@@ -6,7 +6,6 @@ import com.softserve.algorithms.Algorithms;
 import com.softserve.cli.AbstractCLI;
 import com.softserve.cli.CommandLineInterface;
 import com.softserve.cli.InvalidInputHandler;
-import com.softserve.cli.SequenceFormatException;
 import com.softserve.cli.util.ArrayUtil;
 import com.softserve.cli.util.InputUtil;
 
@@ -26,7 +25,6 @@ public class MaxPossibleDailyTasksCLI extends AbstractCLI implements CommandLine
 		InvalidInputHandler.promptIfInvalidValue(this::promptNParamethers, INVALID_NUMBER_MSG);
 		InvalidInputHandler.promptIfInvalidValue(this::promptHighSequence, BAD_SEQUENCE_FORMAT_MSG);
 		InvalidInputHandler.promptIfInvalidValue(this::promptLowSequence, BAD_SEQUENCE_FORMAT_MSG);
-		this.comparingArrs(high, low);
 		int result = Algorithms.findindMaxSumOfPossibleDailyTasks(high, low, n);
 		System.out.println("This is your optimal quantity of tasks - " + result);
 	}
@@ -61,17 +59,6 @@ public class MaxPossibleDailyTasksCLI extends AbstractCLI implements CommandLine
 		}
 		
 		return (this.low.length == this.n);
-	}
-
-	private void comparingArrs(int arrHigh[], int arrLow[]) {
-		for (int i = 0; i < n; i++) {
-			int pr = 0;
-			if (arrHigh[i] < arrLow[i]) {
-				pr = arrHigh[i];
-				arrHigh[i] = arrLow[i];
-				arrLow[i] = pr;
-			}
-		}
 	}
 
 	private boolean checkIfArrHasNegativeValues(int arr[]) {

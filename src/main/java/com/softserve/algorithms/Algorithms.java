@@ -56,7 +56,7 @@ public class Algorithms {
         }
     }
     
-    public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int number) {
+    public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int number) throws NegativeArraySizeException, IllegalArgumentException{
 		if (number < 1) {
 			throw new NegativeArraySizeException();
 		}
@@ -65,6 +65,8 @@ public class Algorithms {
 				throw new IllegalArgumentException();
 			}
 		}
+		
+		comparingArrs(high, low, number);
 		int localArray[] = new int[number + 1];
 		localArray[0] = 0;
 		localArray[1] = high[0];
@@ -81,7 +83,18 @@ public class Algorithms {
 		}
 	}
     
-    public static BigDecimal findingMaxWaysOfPaintingTheFence(int numberOfPosts, int numberOfColors) {
+    public static void comparingArrs(int arrHigh[], int arrLow[], int number) {
+		for (int i = 0; i < number; i++) {
+			int pr = 0;
+			if (arrHigh[i] < arrLow[i]) {
+				pr = arrHigh[i];
+				arrHigh[i] = arrLow[i];
+				arrLow[i] = pr;
+			}
+		}
+	}
+    
+    public static BigDecimal findingMaxWaysOfPaintingTheFence(int numberOfPosts, int numberOfColors) throws IllegalArgumentException{
     	if (numberOfPosts <= 0 || numberOfColors <= 0) {
 			throw  new IllegalArgumentException();
 		}
