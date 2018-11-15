@@ -1,9 +1,13 @@
 package com.softserve.algorithms;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Algorithms {
-    public static int fibonacci(int number) {
+    public static int findFibonacciMember(int number) throws IllegalArgumentException {
+        if (number < 0) {
+            throw new IllegalArgumentException("Position of fibonacci number can't be negative.");
+        }
         int term1 = 0;
         int term2 = 1;
         int termSum = 0;
@@ -15,7 +19,8 @@ public class Algorithms {
         return termSum;
     }
 
-    public static int longestSubset(int[] sequence) {
+    public static int longestSubset(int[] sequence) throws NullPointerException {
+        Objects.requireNonNull(sequence, "Can't get longest subset from null sequence.");
         int[] sequenceCopy = Arrays.copyOf(sequence, sequence.length);
         int subSequenceSize = 1;
         int max = 0;

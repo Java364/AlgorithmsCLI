@@ -20,12 +20,12 @@ public class FibonacciCLI extends AbstractCLI implements CommandLineInterface {
         System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                           algorithmOption.getOptionDescription());
         InvalidInputHandler.promptIfInvalidValue(this::promptFibonacciNumber, INVALID_NUMBER_MSG);
-        int fibResult = Algorithms.fibonacci(fibonacciPos);
+        int fibResult = Algorithms.findFibonacciMember(fibonacciPos);
         System.out.format("Fibonacci member at position %d is %d\n", fibonacciPos, fibResult);
     }
 
     private boolean promptFibonacciNumber() {
-        System.out.print("Please enter fibonacci position(only positive integer numbers): ");
+        System.out.print("Please enter findFibonacciMember position(only positive integer numbers): ");
         if (!InputUtil.hasNextInt(prompt))
             return false;
         this.fibonacciPos = InputUtil.readIntValue(prompt);
