@@ -56,51 +56,51 @@ public class Algorithms {
         }
     }
     
-    public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int n) {
-		if (n < 1) {
+    public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int number) {
+		if (number < 1) {
 			throw new NegativeArraySizeException();
 		}
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < number; i++) {
 			if (high[i] < 0 || low[i] < 0) {
 				throw new IllegalArgumentException();
 			}
 		}
-		int taskDp[] = new int[n + 1];
-		taskDp[0] = 0;
-		taskDp[1] = high[0];
-		for (int i = 2; i <= n; i++)
-			taskDp[i] = findingMaxIntAlgorithm(high[i - 1] + taskDp[i - 2], low[i - 1] + taskDp[i - 1]);
-		return taskDp[n];
+		int localArray[] = new int[number + 1];
+		localArray[0] = 0;
+		localArray[1] = high[0];
+		for (int i = 2; i <= number; i++)
+			localArray[i] = findingMaxIntAlgorithm(high[i - 1] + localArray[i - 2], low[i - 1] + localArray[i - 1]);
+		return localArray[number];
 	}
     
-    public static int findingMaxIntAlgorithm(int x, int y) {
-		if (x > y) {
-			return x;
+    public static int findingMaxIntAlgorithm(int firstNumber, int secondNumber) {
+		if (firstNumber > secondNumber) {
+			return firstNumber;
 		} else {
-			return y;
+			return secondNumber;
 		}
 	}
     
-    public static BigDecimal findingMaxWaysOfPaintingTheFence(int n, int k) {
-    	if (n <= 0 || k <= 0) {
+    public static BigDecimal findingMaxWaysOfPaintingTheFence(int numberOfPosts, int numberOfColors) {
+    	if (numberOfPosts <= 0 || numberOfColors <= 0) {
 			throw  new IllegalArgumentException();
 		}
     	
-    	if (n == 1) {
-			BigDecimal bd = new BigDecimal(k);
+    	if (numberOfPosts == 1) {
+			BigDecimal bd = new BigDecimal(numberOfColors);
 			return bd;
 		}
 
-		BigDecimal[] dp1 = new BigDecimal[n];
-		BigDecimal[] dp2 = new BigDecimal[n];
+		BigDecimal[] localArrayOne = new BigDecimal[numberOfPosts];
+		BigDecimal[] localArrayTwo = new BigDecimal[numberOfPosts];
 
-		dp1[0] = BigDecimal.valueOf(0);
-		dp2[0] = BigDecimal.valueOf(k);
-		for (int i = 1; i < n; i++) {
-			dp1[i] = dp2[i - 1];
-			dp2[i] = new BigDecimal(k - 1).multiply(dp1[i - 1].add(dp2[i - 1]));
+		localArrayOne[0] = BigDecimal.valueOf(0);
+		localArrayTwo[0] = BigDecimal.valueOf(numberOfColors);
+		for (int i = 1; i < numberOfPosts; i++) {
+			localArrayOne[i] = localArrayTwo[i - 1];
+			localArrayTwo[i] = new BigDecimal(numberOfColors - 1).multiply(localArrayOne[i - 1].add(localArrayTwo[i - 1]));
 		}
-		BigDecimal bd = dp1[n - 1].add(dp2[n - 1]);
+		BigDecimal bd = localArrayOne[numberOfPosts - 1].add(localArrayTwo[numberOfPosts - 1]);
 		
 		return bd;
 	}
