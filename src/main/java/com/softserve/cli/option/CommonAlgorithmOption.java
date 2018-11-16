@@ -15,8 +15,18 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     WAYS_TO_SUM_USING_ARRAY("Ways to sum to N using array elements with repetition",
     		"The goal: To find how many ways we have "
     		+ "to represent one number with a given array of numbers"),
-    PAINTING_THE_FENCE("Painting the fence", "The goal: Given a fence with n posts and k colors," +
-            " find out the number of ways of painting the fence such that at most 2 adjacent posts have the same color. ");
+    PAINTING_THE_FENCE("Painting the fence", "The goal: Given a fence with n posts and k colors," 
+    		+ " find out the number of ways of painting the fence such that at most 2 adjacent posts have the same color. "),
+    OPTIMIZED_PAINTING_FENCE("Painting fence", "Goal: Given a fence with n posts and k colors, " 
+    		+ "find out the number of ways of painting the fence such that at most 2 adjacent "
+    		+ "posts have the same color. "),
+    MAX_POSSIBLE_DAILY_TASKS("Work to be with High-effort or with Low-effort", 
+			"The goal: We have n days and for each day (d) you could either perform a high effort"
+    		+ " tasks (hi) or a low effort tasks (li) or no task with the constraint (it is"
+    		+ " written 0) that you can choose a high-effort tasks only if you chose no task on "
+    		+ "the previous day. Write a program to find the maximum amount of cost you can perform "
+    		+ "within these n days.");
+  
 
     private String optionName;
     private String optionDescription;
