@@ -57,12 +57,12 @@ public class Algorithms {
     }
 
     /**
-     *
-     * @param posts - number of posts
+     * @param posts  - number of posts
      * @param colors - number of colors
      * @return count of ways to color n posts using k colors
+     * @throws IllegalArgumentException if values are less then one
      */
-    public static BigDecimal countWaysPaintingTheFence(int posts, int colors) {
+    public static BigDecimal countWaysPaintingTheFence(int posts, int colors) throws IllegalArgumentException {
         if (posts < 1 || colors < 1) {
             throw new IllegalArgumentException("Posts and colors must be positive");
         }
