@@ -63,12 +63,15 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                 case WAYS_TO_SUM_USING_ARRAY:
                     mainCLI = new WaysToSumUsingArrayCLI(prompt);
                     break;
+                case PAINTING_THE_FENCE:
+                    mainCLI = new PaintingTheFenceCLI(prompt);
+                    break;
                 case OPTIMIZED_PAINTING_FENCE:
-                	mainCLI = new OptimizedPaintingFence(prompt);
-                	break;
+                	  mainCLI = new OptimizedPaintingFence(prompt);
+                	  break;
                 case MAX_POSSIBLE_DAILY_TASKS:
-                	mainCLI = new MaxPossibleDailyTasksCLI(prompt);
-                	break;
+                	  mainCLI = new MaxPossibleDailyTasksCLI(prompt);
+                	  break;
             }
             runCliIfExitNotRequested(exitRequested);
         }

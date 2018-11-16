@@ -60,7 +60,32 @@ public class Algorithms {
             return count[n];
         }
     }
-    
+  
+    /**
+     * @param posts  - number of posts
+     * @param colors - number of colors
+     * @return count of ways to color n posts using k colors
+     * @throws IllegalArgumentException if values are less then one
+     */
+    public static BigDecimal countWaysPaintingTheFence(int posts, int colors) throws IllegalArgumentException {
+        if (posts < 1 || colors < 1) {
+            throw new IllegalArgumentException("Posts and colors must be positive");
+        }
+
+        BigDecimal total = new BigDecimal(colors);
+
+        BigDecimal same;
+        BigDecimal diff = new BigDecimal(colors);
+
+        for (int i = 2; i <= posts; i++) {
+            same = diff;
+            diff = total.multiply(new BigDecimal(colors - 1));
+            total = same.add(diff);
+        }
+        return total;
+    }
+
+  
     public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int number) throws NegativeArraySizeException, IllegalArgumentException{
 		if (number < 1) {
 			throw new NegativeArraySizeException();
