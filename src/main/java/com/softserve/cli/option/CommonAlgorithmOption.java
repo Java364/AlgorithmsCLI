@@ -25,7 +25,8 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     		+ " tasks (hi) or a low effort tasks (li) or no task with the constraint (it is"
     		+ " written 0) that you can choose a high-effort tasks only if you chose no task on "
     		+ "the previous day. Write a program to find the maximum amount of cost you can perform "
-    		+ "within these n days.");
+    		+ "within these n days."),
+    INTRESTING_ROW("Intresting row", "The goal: To find which is the member of position n in our interesting row.");
   
 
     private String optionName;
