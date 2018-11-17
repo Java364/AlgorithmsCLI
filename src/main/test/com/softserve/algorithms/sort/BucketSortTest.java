@@ -1,4 +1,4 @@
-/*
+
 package com.softserve.algorithms.sort;
 
 import org.junit.Before;
@@ -95,4 +95,3 @@ public class BucketSortTest {
         }
     }
 }
-*/
