@@ -28,7 +28,9 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     		+ "within these n days."),
     FRIEND_PAIRS("Friend pairs", "The goal: To find in how many ways is possible to calculate n with positive integers. "),
     WAYS_TO_WRITE_N_AS_SUM("Ways to write n as sum of two or more positive integers", 
-	         "The goal: To find in how many ways is possible to calculate n with positive integers.");
+	         "The goal: To find in how many ways is possible to calculate n with positive integers."),
+    INTRESTING_ROW("Intresting row", "The goal: To find which is the member of position n in our interesting row.");
+
     private String optionName;
     private String optionDescription;
 
