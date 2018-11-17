@@ -72,6 +72,12 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                 case MAX_POSSIBLE_DAILY_TASKS:
                 	  mainCLI = new MaxPossibleDailyTasksCLI(prompt);
                 	  break;
+                case FRIEND_PAIRS:
+                    mainCLI = new FriendPairsCLI(prompt);
+                    break;
+                case WAYS_TO_WRITE_N_AS_SUM:
+                    mainCLI = new WaysToWriteNAsSumCLI(prompt);
+                    break;
             }
             runCliIfExitNotRequested(exitRequested);
         }
