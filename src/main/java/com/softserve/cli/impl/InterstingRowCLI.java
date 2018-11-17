@@ -20,8 +20,8 @@ public class InterstingRowCLI extends AbstractCLI {
         System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                 algorithmOption.getOptionDescription());
         InvalidInputHandler.promptIfInvalidValue(this::promptBase, INVALID_NUMBER_MSG);
-        InvalidInputHandler.promptIfInvalidValue(this::promptSequence, BAD_SEQUENCE_FORMAT_MSG);
-        System.out.printf("Number %d%n", Algorithms.interestingRow(parsedSequence, base));
+        /*InvalidInputHandler.promptIfInvalidValue(this::promptSequence, BAD_SEQUENCE_FORMAT_MSG);*/
+        System.out.printf("Number %d%n", Algorithms.interestingRow( base));
 
     }
 
