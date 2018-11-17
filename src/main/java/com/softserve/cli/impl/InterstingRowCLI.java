@@ -24,7 +24,6 @@ public class InterstingRowCLI extends AbstractCLI {
         System.out.printf("Number %d%n", Algorithms.interestingRow( base));
 
     }
-
     private boolean promptBase() {
         System.out.println("Enter positive integer number: ");
         if (!InputUtil.hasNextInt(prompt))

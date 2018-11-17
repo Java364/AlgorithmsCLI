@@ -31,7 +31,6 @@ public class BucketSortTest {
 
         assertArrayEquals(expected, actual);
     }
-
     @Test
     public void twoDifferentNumbersArray() {
         int[] expected = new int[]{1, 3};
