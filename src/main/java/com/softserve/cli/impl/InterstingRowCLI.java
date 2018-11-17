@@ -22,7 +22,6 @@ public class InterstingRowCLI extends AbstractCLI {
         InvalidInputHandler.promptIfInvalidValue(this::promptBase, INVALID_NUMBER_MSG);
 
         System.out.printf("Number %d%n", Algorithms.interestingRow( base));
-
     }
     private boolean promptBase() {
         System.out.println("Enter positive integer number: ");
