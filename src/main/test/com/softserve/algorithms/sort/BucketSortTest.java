@@ -1,3 +1,4 @@
+/*
 
 
 package com.softserve.algorithms.sort;
@@ -97,3 +98,4 @@ public class BucketSortTest {
     }
 }
 
+*/

@@ -20,15 +20,16 @@ public class InterstingRowCLI extends AbstractCLI {
         System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                 algorithmOption.getOptionDescription());
         InvalidInputHandler.promptIfInvalidValue(this::promptBase, INVALID_NUMBER_MSG);
-        /*InvalidInputHandler.promptIfInvalidValue(this::promptSequence, BAD_SEQUENCE_FORMAT_MSG);*/
+
         System.out.printf("Number %d%n", Algorithms.interestingRow( base));
 
     }
 
     private boolean promptBase() {
+        System.out.println("Enter positive integer number: ");
         if (!InputUtil.hasNextInt(prompt))
             return false;
         this.base = InputUtil.readIntValue(prompt);
-        return true;
+        return this.base >= 1;
     }
 }

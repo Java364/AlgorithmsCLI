@@ -147,7 +147,7 @@ public class Algorithms {
 		
 		return bd;
 	}
-    public static int interestingRow( int base) {
+    public static int interestingRow( int base) throws IllegalArgumentException  {
         if (base < 0) {
             throw new IllegalArgumentException("Can't be 0.");
         }
