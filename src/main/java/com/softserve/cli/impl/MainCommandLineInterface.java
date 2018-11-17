@@ -72,6 +72,9 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                 case MAX_POSSIBLE_DAILY_TASKS:
                 	  mainCLI = new MaxPossibleDailyTasksCLI(prompt);
                 	  break;
+                case INTRESTING_ROW:
+                      mainCLI = new InterstingRowCLI(prompt);
+                      break;
             }
             runCliIfExitNotRequested(exitRequested);
         }
