@@ -147,4 +147,11 @@ public class Algorithms {
 		
 		return bd;
 	}
+    public static int interestingRow(int[] array, int base) {
+        for (int i = 0; i < array.length; i++) {
+            if (i == base)
+                return array[i];
+        }
+        return base;
+    }
 }
