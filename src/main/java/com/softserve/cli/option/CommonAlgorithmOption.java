@@ -26,7 +26,7 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     		+ " written 0) that you can choose a high-effort tasks only if you chose no task on "
     		+ "the previous day. Write a program to find the maximum amount of cost you can perform "
     		+ "within these n days."),
-    FRIEND_PAIRS("Friend pairs", "he goal: To find in how many ways is possible to calculate n with positive integers. "),
+    FRIEND_PAIRS("Friend pairs", "The goal: To find in how many ways is possible to calculate n with positive integers. "),
     WAYS_TO_WRITE_N_AS_SUM("Ways to write n as sum of two or more positive integers", 
 	         "The goal: To find in how many ways is possible to calculate n with positive integers.");
     private String optionName;
