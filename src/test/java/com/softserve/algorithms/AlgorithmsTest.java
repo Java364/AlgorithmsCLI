@@ -59,4 +59,25 @@ public class AlgorithmsTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void countWaysToTileTheFloor1() {
+        assertEquals(1, Algorithms.countWaysToTileTheFloor(2, 3));
+    }
+
+    @Test
+    public void countWaysToTileTheFloor2() {
+        assertEquals(2,  Algorithms.countWaysToTileTheFloor(4, 4));
+    }
+
+
+    @Test (expected = IllegalArgumentException.class)
+    public void countWaysToTileTheFloorExceptionHandlingWithWrongN() {
+        Algorithms.countWaysToTileTheFloor(0, 2);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void countWaysToTileTheFloorExceptionHandlingWithWrongM() {
+        Algorithms.countWaysToTileTheFloor(2, 1);
+    }
 }
