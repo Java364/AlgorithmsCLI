@@ -2,8 +2,12 @@ package com.softserve.algorithms;
 
 public class PathWithoutCrossing {
 	
-	public int countPathsWithoutCrossing (int numberPoints) {
-    	if(numberPoints%2 == 1) {
+	public int countPathsWithoutCrossing (int numberPoints) throws IllegalArgumentException{
+    	if(numberPoints < 0) {
+    		throw new IllegalArgumentException("count of numbers cann't be negative");
+    	}
+		
+		if(numberPoints%2 == 1) {
     		return 0;
     	}
     	int tempNumberPoints = numberPoints/2;
