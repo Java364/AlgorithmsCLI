@@ -179,4 +179,18 @@ public class Algorithms {
 		
 		return bd;
 	}
+    public static int interestingRow( int base) throws IllegalArgumentException  {
+        if (base < 0) {
+            throw new IllegalArgumentException("Can't be 0.");
+        }
+        int base1 = 0;
+        int base2 = 1;
+        int number = 0;
+        for (int i = 1; i < base; i++) {
+            number = (base1*2) + base2;
+            base1 = base2;
+            base2 = number;
+        }
+        return number;
+    }
 }

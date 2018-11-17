@@ -78,6 +78,10 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                 case WAYS_TO_WRITE_N_AS_SUM:
                     mainCLI = new WaysToWriteNAsSumCLI(prompt);
                     break;
+                case INTRESTING_ROW:
+                      mainCLI = new InterstingRowCLI(prompt);
+                      break;
+
             }
             runCliIfExitNotRequested(exitRequested);
         }
