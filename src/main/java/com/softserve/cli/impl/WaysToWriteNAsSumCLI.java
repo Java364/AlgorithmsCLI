@@ -19,12 +19,12 @@ public class WaysToWriteNAsSumCLI extends AbstractCLI implements CommandLineInte
     public void run() {
         System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                           algorithmOption.getOptionDescription());
-        InvalidInputHandler.promptIfInvalidValue(this::promptFriendPairs, INVALID_NUMBER_MSG);
+        InvalidInputHandler.promptIfInvalidValue(this::promptWaysToWriteNAsSum, INVALID_NUMBER_MSG);
         int ways = Algorithms.FriendPairs(number);
         System.out.format("Ways to write number %d as sum is %d\n", number, ways);
     }
 
-    private boolean promptFriendPairs() {
+    private boolean promptWaysToWriteNAsSum() {
         System.out.print("Please, enter number the number: ");
         if (!InputUtil.hasNextInt(prompt))
             return false;
