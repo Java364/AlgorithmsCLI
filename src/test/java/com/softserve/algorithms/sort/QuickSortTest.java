@@ -1,5 +1,7 @@
-package com.softserve.algorithms.sort;
+package java.com.softserve.algorithms.sort;
 
+import com.softserve.algorithms.sort.QuickSort;
+import com.softserve.algorithms.sort.Sort;
 import org.junit.Before;
 import org.junit.Test;
 

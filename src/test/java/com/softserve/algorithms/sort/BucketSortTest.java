@@ -1,18 +1,19 @@
 
 
 
-package com.softserve.algorithms.sort;
+package java.com.softserve.algorithms.sort;
 
+import com.softserve.algorithms.sort.BucketSort;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class BucketSortTest {
 
@@ -31,6 +32,7 @@ public class BucketSortTest {
 
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void twoDifferentNumbersArray() {
         int[] expected = new int[]{1, 3};
@@ -71,10 +73,10 @@ public class BucketSortTest {
             ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-10, -5, -2, 0, 1, 2, 5, 10));
             ArrayList<Integer> unsorted = new ArrayList<>(Arrays.asList(10, -10, 5, -5, 2, -2, 0, 1));
 
-            ArrayList<Integer> actual = (ArrayList<Integer>) method.invoke(bucketSort, unsorted );
+            ArrayList<Integer> actual = (ArrayList<Integer>) method.invoke(bucketSort, unsorted);
 
             assertEquals(expected, actual);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e ) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
@@ -87,11 +89,11 @@ public class BucketSortTest {
             int[] inputArray = {10, -10, 5, -5, 2, -2, 0, 1};
             int expectedIndex = 5;
 
-            int actualIndex = (int) method.invoke(bucketSort, inputArray,  5);
+            int actualIndex = (int) method.invoke(bucketSort, inputArray, 5);
 
             assertEquals(expectedIndex, actualIndex);
 
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e ) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
