@@ -7,7 +7,7 @@ public class BucketSort implements Sort {
     public int[] sort(int[] input) throws IllegalArgumentException {
 
         if (input == null) {
-            throw new IllegalArgumentException("array can not be null");
+            throw new IllegalArgumentException("Array can not be null");
         }
 
         if (input.length == 0 || input.length == 1) {

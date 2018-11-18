@@ -2,7 +2,7 @@ package com.softserve.algorithms;
 
 public class WaysToSumUsingArray {
 	
-	public int getAllConbinationsOfSum(int sequence[], int sum) throws IllegalArgumentException{ 
+	public int getAllCombinationsOfSum(int sequence[], int sum) throws IllegalArgumentException{
         
 		if(sum <= 0) {
 			throw new IllegalArgumentException("sum cann't be negative or equel zero");

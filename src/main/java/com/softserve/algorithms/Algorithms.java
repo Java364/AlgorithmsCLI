@@ -137,7 +137,7 @@ public class Algorithms {
         return f[N];
     }
 
-    public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int number) throws NegativeArraySizeException, IllegalArgumentException{
+    public static int findingMaxSumOfPossibleDailyTasks(int high[], int low[], int number) throws NegativeArraySizeException, IllegalArgumentException{
 		if (number < 1) {
 			throw new NegativeArraySizeException();
 		}
@@ -147,7 +147,7 @@ public class Algorithms {
 			}
 		}
 
-		comparingArrs(high, low, number);
+		comparingArrays(high, low, number);
 		int localArray[] = new int[number + 1];
 		localArray[0] = 0;
 		localArray[1] = high[0];
@@ -164,7 +164,7 @@ public class Algorithms {
 		}
 	}
     
-    public static void comparingArrs(int arrHigh[], int arrLow[], int number) {
+    public static void comparingArrays(int arrHigh[], int arrLow[], int number) {
 		for (int i = 0; i < number; i++) {
 			int pr = 0;
 			if (arrHigh[i] < arrLow[i]) {
