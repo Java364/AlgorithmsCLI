@@ -1,6 +1,7 @@
 package com.softserve.algorithms;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -98,7 +99,7 @@ public class Algorithms {
         }
         return total;
     }
-    public static int WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(int N) throws IllegalArgumentException {
+    public static int waysToWriteNAsSumOfTwoOrMorePositiveIntegers(int N) throws IllegalArgumentException {
         if (N < 0) {
             throw new IllegalArgumentException();
         }
@@ -117,21 +118,25 @@ public class Algorithms {
 
         return solutions[N];
     }
-    public static int FriendPairs(int N) throws IllegalArgumentException {
+    public static BigInteger friendPairs(int N) throws IllegalArgumentException {
         if (N < 0) {
             throw new IllegalArgumentException();
         }
-        int f[] = new int[N + 1];
+        BigInteger f[] = new BigInteger[N + 1];
         for (int i = 0; i <= N; i++) {
             if (i <= 2)
-                f[i] = i;
-            else
-                f[i] = f[i - 1] + (i - 1) * f[i - 2];
+                f[i] = BigInteger.valueOf(i);
+            else{
+                BigInteger d = new BigInteger(String.valueOf(i-1));
+                d = new BigInteger(String.valueOf(d.multiply(f[i-2])));
+                f[i] = f[i - 1].add(d);
+            }
+
         }
 
         return f[N];
     }
-  
+
     public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int number) throws NegativeArraySizeException, IllegalArgumentException{
 		if (number < 1) {
 			throw new NegativeArraySizeException();
@@ -141,7 +146,7 @@ public class Algorithms {
 				throw new IllegalArgumentException();
 			}
 		}
-		
+
 		comparingArrs(high, low, number);
 		int localArray[] = new int[number + 1];
 		localArray[0] = 0;

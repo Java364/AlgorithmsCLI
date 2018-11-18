@@ -1,5 +1,4 @@
-package com.softserve.algorithms;
-
+import com.softserve.algorithms;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,6 +8,35 @@ import static org.junit.Assert.assertEquals;
 
 public class AlgorithmsTest {
 
+    @Test(expected = NegativeArraySizeException.class)
+    public void testfindindMaxSumOfPossibleDailyTasks(){
+        Algorithms.findindMaxSumOfPossibleDailyTasks(new int[]{1,2,5,7},new int[]{10,4,3,1,7},-9);
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void testfindindMaxSumOfPossibleDailyTasks1(){
+        Algorithms.findindMaxSumOfPossibleDailyTasks(new int[]{1,2,-15,7},new int[]{10,4,3,1,7},6);
+    }
+    @Test
+    public void testfindindMaxSumOfPossibleDailyTasks2(){
+        int expectedResult = 20;
+        int actualResult = Algorithms.findindMaxSumOfPossibleDailyTasks(new int[]{3,6,8,7,6},new int[]{1,5,4,5,3},5);
+        Assert.assertEquals(expectedResult,actualResult);
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void testfindingMaxWaysOfPaintingTheFence(){
+        Algorithms.findingMaxWaysOfPaintingTheFence(4,0);
+    }
+    @Test
+    public void testfindingMaxWaysOfPaintingTheFence1(){
+        BigDecimal expectedResult = new BigDecimal(16);
+       BigDecimal actualResult = Algorithms.findingMaxWaysOfPaintingTheFence(2,4);
+       Assert.assertEquals(expectedResult,actualResult);
+    }
+    @Test
+    public void testfindingMaxWaysOfPaintingTheFence2(){
+         Algorithms.findingMaxWaysOfPaintingTheFence(21,2147483647);
+
+    }
     @Test
     public void testLongestSubsetWithPositiveNumbers() {
         int expectedResult = 3;
@@ -59,7 +87,7 @@ public class AlgorithmsTest {
 
         assertEquals(expected, actual);
     }
-
+   
     @Test
     public void countWaysToTileTheFloor1() {
         assertEquals(1, Algorithms.countWaysToTileTheFloor(2, 3));
