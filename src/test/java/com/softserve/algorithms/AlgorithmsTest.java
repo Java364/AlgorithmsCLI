@@ -80,4 +80,28 @@ public class AlgorithmsTest {
     public void countWaysToTileTheFloorExceptionHandlingWithWrongM() {
         Algorithms.countWaysToTileTheFloor(2, 1);
     }
+    
+    //testing interesting row method
+    @Test (expected = IllegalArgumentException.class)
+    public void testInterestingRowNegativeNumber() {
+    	Algorithms.interestingRow(-3);
+    }
+    
+    @Test
+    public void testInterestingRowFirstElement() {
+    	int expect = 1;
+    	int base = 1;
+    	assertEquals(expect, Algorithms.interestingRow(base));
+    }
+    
+    @Test
+    public void testInterestingRow() {
+    	int expect = 11;
+    	int base = 5;
+    	assertEquals(expect, Algorithms.interestingRow(base));
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void testInterestingRowZeroNumber() {
+    	Algorithms.interestingRow(0);
+    }
 }
