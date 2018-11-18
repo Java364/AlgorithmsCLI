@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Algorithms {
 
-    public static int findFibonacciMember(int number, int step) {
+    public static int findFibonacciMember(int number, int step) throws IllegalStateException {
         if (number < 0) {
             throw new IllegalArgumentException("Position of fibonacci number can't be negative.");
         }
