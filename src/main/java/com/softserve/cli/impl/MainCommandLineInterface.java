@@ -114,6 +114,8 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
         if (!exitRequested) {
             mainCLI.setAlgorithmOption(algorithmOption);
             mainCLI.run();
+            System.out.println("Enter any key to exit into menu...");
+            prompt.nextLine();
         }
     }
 
