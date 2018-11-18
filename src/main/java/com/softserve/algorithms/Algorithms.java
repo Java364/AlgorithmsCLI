@@ -84,7 +84,39 @@ public class Algorithms {
         }
         return total;
     }
+    public static int WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(int N) throws IllegalArgumentException {
+        if (N < 0) {
+            throw new IllegalArgumentException();
+        }
 
+        int solutions[] = new int[N + 1];
+
+        for (int i = 0; i < N; i++) {
+            solutions[i] = 0;
+        }
+
+        solutions[0] = 1;
+
+        for (int i = 1; i < N; i++)
+            for (int j = i; j <= N; j++)
+                solutions[j] += solutions[j - i];
+
+        return solutions[N];
+    }
+    public static int FriendPairs(int N) throws IllegalArgumentException {
+        if (N < 0) {
+            throw new IllegalArgumentException();
+        }
+        int f[] = new int[N + 1];
+        for (int i = 0; i <= N; i++) {
+            if (i <= 2)
+                f[i] = i;
+            else
+                f[i] = f[i - 1] + (i - 1) * f[i - 2];
+        }
+
+        return f[N];
+    }
   
     public static int findindMaxSumOfPossibleDailyTasks(int high[], int low[], int number) throws NegativeArraySizeException, IllegalArgumentException{
 		if (number < 1) {
