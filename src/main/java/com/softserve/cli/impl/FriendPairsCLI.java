@@ -22,7 +22,7 @@ public class FriendPairsCLI extends AbstractCLI implements CommandLineInterface 
         System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                           algorithmOption.getOptionDescription());
         InvalidInputHandler.promptIfInvalidValue(this::promptFriendPairs, INVALID_NUMBER_MSG);
-        BigInteger friendPair = Algorithms.FriendPairs(friendPairs);
+        BigInteger friendPair = Algorithms.friendPairs(friendPairs);
         System.out.format("Friend pairs is %d\n", friendPair);
     }
 

@@ -85,7 +85,7 @@ public class Algorithms {
         }
         return total;
     }
-    public static int WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(int N) throws IllegalArgumentException {
+    public static int waysToWriteNAsSumOfTwoOrMorePositiveIntegers(int N) throws IllegalArgumentException {
         if (N < 0) {
             throw new IllegalArgumentException();
         }
@@ -104,7 +104,7 @@ public class Algorithms {
 
         return solutions[N];
     }
-    public static BigInteger FriendPairs(int N) throws IllegalArgumentException {
+    public static BigInteger friendPairs(int N) throws IllegalArgumentException {
         if (N < 0) {
             throw new IllegalArgumentException();
         }
