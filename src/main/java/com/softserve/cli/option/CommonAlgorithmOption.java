@@ -29,7 +29,11 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     FRIEND_PAIRS("Friend pairs", "The goal: To find in how many ways is possible to calculate n with positive integers. "),
     WAYS_TO_WRITE_N_AS_SUM("Ways to write n as sum of two or more positive integers", 
 	         "The goal: To find in how many ways is possible to calculate n with positive integers."),
-    INTRESTING_ROW("Intresting row", "The goal: To find which is the member of position n in our interesting row.");
+    INTRESTING_ROW("Intresting row", "The goal: To find which is the member of position n in our interesting row."),
+	LONGEST_POLIDROME("The longest palindromic subsequence", 
+			"Given a string which we have to check how many symbols has the biggest palindrome which is included in the given one."),
+	WAYS_TO_COVER_DISTANCE_IN_3_STEPS("Ways to cover in 3 steps",
+			"Given a distance ‘n', count total number of ways to cover the distance with 1, 2 and 3 steps. Enter the distance that equals or bigger then 2 :");
 
     private String optionName;
     private String optionDescription;
