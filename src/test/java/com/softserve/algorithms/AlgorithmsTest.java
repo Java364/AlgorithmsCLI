@@ -87,10 +87,7 @@ public class AlgorithmsTest {
 
         assertEquals(expected, actual);
     }
-    @Test
-    public void testFriendPairs(){
-
-    }
+   
     @Test
     public void countWaysToTileTheFloor1() {
         assertEquals(1, Algorithms.countWaysToTileTheFloor(2, 3));
