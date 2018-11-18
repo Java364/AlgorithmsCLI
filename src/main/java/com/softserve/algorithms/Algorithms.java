@@ -5,19 +5,33 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Algorithms {
-    public static int findFibonacciMember(int number) throws IllegalArgumentException {
+
+    public static int findFibonacciMember(int number, int step) throws IllegalStateException {
         if (number < 0) {
             throw new IllegalArgumentException("Position of fibonacci number can't be negative.");
         }
-        int term1 = 0;
-        int term2 = 1;
-        int termSum = 0;
-        for (int i = 1; i <= number; i++) {
-            termSum = term1 + term2;
-            term1 = term2;
-            term2 = termSum;
+        if ((step > number) || (step < 0) || (step > 1))
+            throw new IllegalArgumentException("Incorrect step: " + step);
+        int[] fibonacciSeeds = initFibonacciSeeds(step);
+        int currentFibonacci = 0;
+        int upperBound = number - (step > 0 ? 1 : 0);
+        for (int i = 1; i <= upperBound; i++) {
+            currentFibonacci = fibonacciSeeds[0] + fibonacciSeeds[fibonacciSeeds.length - 1];
+            updateFibonacciSeed(fibonacciSeeds, currentFibonacci);
         }
-        return termSum;
+        return currentFibonacci;
+    }
+
+    private static int[] initFibonacciSeeds(int step) {
+        int[] fibonacciSeeds = new int[step + 2];
+        fibonacciSeeds[fibonacciSeeds.length - 1] = 1;
+        return fibonacciSeeds;
+    }
+
+    private static void updateFibonacciSeed(int[] fibonacciSeeds, int currentFibonacci) {
+        int lastSeedIndex = fibonacciSeeds.length - 1;
+        System.arraycopy(fibonacciSeeds, 1, fibonacciSeeds, 0, lastSeedIndex);
+        fibonacciSeeds[lastSeedIndex] = currentFibonacci;
     }
 
     public static int longestSubset(int[] sequence) throws NullPointerException {
