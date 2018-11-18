@@ -10,17 +10,17 @@ import static org.junit.Assert.assertEquals;
 public class AlgorithmsTest {
 
     @Test(expected = NegativeArraySizeException.class)
-    public void testfindindMaxSumOfPossibleDailyTasks(){
-        Algorithms.findindMaxSumOfPossibleDailyTasks(new int[]{1,2,5,7},new int[]{10,4,3,1,7},-9);
+    public void testfindingMaxSumOfPossibleDailyTasks(){
+        Algorithms.findingMaxSumOfPossibleDailyTasks(new int[]{1,2,5,7},new int[]{10,4,3,1,7},-9);
     }
     @Test (expected = IllegalArgumentException.class)
-    public void testfindindMaxSumOfPossibleDailyTasks1(){
-        Algorithms.findindMaxSumOfPossibleDailyTasks(new int[]{1,2,-15,7},new int[]{10,4,3,1,7},6);
+    public void testfindingMaxSumOfPossibleDailyTasks1(){
+        Algorithms.findingMaxSumOfPossibleDailyTasks(new int[]{1,2,-15,7},new int[]{10,4,3,1,7},6);
     }
     @Test
-    public void testfindindMaxSumOfPossibleDailyTasks2(){
+    public void testfindingMaxSumOfPossibleDailyTasks2(){
         int expectedResult = 20;
-        int actualResult = Algorithms.findindMaxSumOfPossibleDailyTasks(new int[]{3,6,8,7,6},new int[]{1,5,4,5,3},5);
+        int actualResult = Algorithms.findingMaxSumOfPossibleDailyTasks(new int[]{3,6,8,7,6},new int[]{1,5,4,5,3},5);
         Assert.assertEquals(expectedResult,actualResult);
     }
     @Test (expected = IllegalArgumentException.class)
