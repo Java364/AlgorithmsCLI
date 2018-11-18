@@ -1,10 +1,11 @@
-package com.softserve.algorithms.sort;
+package java.com.softserve.algorithms.sort;
 
+import com.softserve.algorithms.sort.InsertionSort;
+import com.softserve.algorithms.sort.Sort;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class InsertionSortTest {
     private int[] unsortedNumbers;
