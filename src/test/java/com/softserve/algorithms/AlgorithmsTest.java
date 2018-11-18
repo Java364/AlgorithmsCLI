@@ -1,4 +1,4 @@
-import com.softserve.algorithms.Algorithms;
+import com.softserve.algorithms;
 import org.junit.Assert;
 import org.junit.Test;
 
