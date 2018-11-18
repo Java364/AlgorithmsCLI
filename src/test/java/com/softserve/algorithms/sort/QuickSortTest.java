@@ -5,9 +5,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
-public class MergeSortTest {
+public class QuickSortTest {
 
     private Sort sort;
     private int[] before;
@@ -21,11 +21,12 @@ public class MergeSortTest {
         }
         sorted = Arrays.copyOf(before, before.length);
         Arrays.sort(sorted);
-        sort = new MergeSort();
+        sort = new QuickSort();
     }
 
     @Test
     public void sort() {
         assertArrayEquals(sorted, sort.sort(before));
     }
+
 }

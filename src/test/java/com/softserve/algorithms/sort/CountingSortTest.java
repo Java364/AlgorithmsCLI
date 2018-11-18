@@ -1,10 +1,9 @@
-package java.com.softserve.algorithms.sort;
+package com.softserve.algorithms.sort;
 
-import static org.junit.Assert.assertArrayEquals;
-import com.softserve.algorithms.sort.CountingSort;
-import com.softserve.algorithms.sort.Sort;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertArrayEquals;
 
 public class CountingSortTest {
 	

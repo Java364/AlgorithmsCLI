@@ -1,6 +1,5 @@
-package java.com.softserve.algorithms;
+package com.softserve.algorithms;
 
-import com.softserve.algorithms.Algorithms;
 import org.junit.Assert;
 import org.junit.Test;
 
