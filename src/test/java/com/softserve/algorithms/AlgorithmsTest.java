@@ -168,4 +168,25 @@ public class AlgorithmsTest {
     public void testFindFibonacciMemberWhenStepIsNegativeOne() throws Exception {
         Algorithms.findFibonacciMember(8, -1);
     }
+    @Test
+    public void testlongestPalindromeSubseq(){
+        int expected = 7;
+        int result = Algorithms.longestPalindromeSubseq("AABBCDDDEEEEEEE");
+        assertEquals(expected,result);
+    }
+    @Test
+    public void testwaysToCoverIn3StepsAlgorithm(){
+        int expected = 7;
+        int result = Algorithms.waysToCoverIn3StepsAlgorithm(4);
+        assertEquals(expected,result);
+    }
+    @Test(expected = NullPointerException.class)
+    public void testlongestPalindromeSubseqException(){
+        Algorithms.longestPalindromeSubseq("");
+    }
+    @Test(expected = Exception.class)
+    public void testwaysToCoverIn3StepsAlgorithmException(){
+        Algorithms.waysToCoverIn3StepsAlgorithm(1);
+    }
+
 }
