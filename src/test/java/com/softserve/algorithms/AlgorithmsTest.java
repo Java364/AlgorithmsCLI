@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
@@ -51,7 +52,14 @@ public class AlgorithmsTest {
         int actualResult = Algorithms.findFibonacciMember(6, 0);
         Assert.assertEquals(expectedResult, actualResult);
     }
-    
+
+    @Test
+    public void testFindFibonacciMemberWithStepOne() {
+        int expectedResult = 4;
+        int actualResult = Algorithms.findFibonacciMember(6, 1);
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testFindFibonacciMemberWithNegativeNumber() {
         Algorithms.findFibonacciMember(-34, 0);
