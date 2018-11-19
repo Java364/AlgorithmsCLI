@@ -134,6 +134,26 @@ public class AlgorithmsTest {
     	Algorithms.interestingRow(0);
     }
     
+    //testing waysToWriteNAsSumOfTwoOrMorePositiveIntegers method
+    @Test(expected = IllegalArgumentException.class)
+    public void testWaysToWriteNAsSumOfTwoOrMorePositiveIntegersNegativeNumber() {
+    	Algorithms.waysToWriteNAsSumOfTwoOrMorePositiveIntegers(-6);
+    }
+    
+    @Test()
+    public void testWaysToWriteNAsSumOfTwoOrMorePositiveIntegersZeroNumber() {
+    	int expect = 1;
+    	assertEquals(expect, Algorithms.waysToWriteNAsSumOfTwoOrMorePositiveIntegers(0));
+    	
+    }
+    
+    @Test
+    public void testWaysToWriteNAsSumOfTwoOrMorePositiveIntegers() {
+    	int expect = 6;
+    	int input = 5;
+    	assertEquals(expect, Algorithms.waysToWriteNAsSumOfTwoOrMorePositiveIntegers(input));
+    }
+    
     @Test(expected = IllegalArgumentException.class)
     public void testFindFibonacciMemberWhenStepIsBiggerThanNumber() throws Exception {
         Algorithms.findFibonacciMember(0, 1);

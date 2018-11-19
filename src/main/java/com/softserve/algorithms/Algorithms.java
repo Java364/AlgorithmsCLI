@@ -213,7 +213,10 @@ public class Algorithms {
         return number;
     }
     
-    public static int waysToCoverIn3StepsAlgorithm(int distance) {
+    public static int waysToCoverIn3StepsAlgorithm(int distance) throws IllegalArgumentException {
+    	if (distance <= 2) {
+    		throw new IllegalArgumentException("Can not be less then 2");
+    	}
 		int[] count = new int[distance + 1];
 
 		// Initialize base values. There is one way to
@@ -230,7 +233,10 @@ public class Algorithms {
 		return count[distance];
 	}
 
-	public static int longestPalindromeSubseq(String s) {
+	public static int longestPalindromeSubseq(String s) throws NullPointerException {
+		if (s.isEmpty()) {
+			throw new NullPointerException("Can not be empty");
+		}
 		int size = s.length();
 		int[][] dp = new int[size][size];
 		// Strings of length 1 are palindrome of lentgh 1

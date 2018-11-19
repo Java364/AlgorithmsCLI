@@ -33,7 +33,7 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
 	LONGEST_POLIDROME("The longest palindromic subsequence", 
 			"Given a string which we have to check how many symbols has the biggest palindrome which is included in the given one."),
 	WAYS_TO_COVER_DISTANCE_IN_3_STEPS("Ways to cover in 3 steps",
-			"Given a distance �n', count total number of ways to cover the distance with 1, 2 and 3 steps. Enter the distance that equals or bigger then 2 :");
+			"Given a distance N, count total number of ways to cover the distance with 1, 2 and 3 steps. Enter the distance that equals or bigger then 2 :");
 
 
     private String optionName;
