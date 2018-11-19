@@ -25,7 +25,7 @@ public class MaxPossibleDailyTasksCLI extends AbstractCLI implements CommandLine
 		InvalidInputHandler.promptIfInvalidValue(this::promptNParamethers, INVALID_NUMBER_MSG);
 		InvalidInputHandler.promptIfInvalidValue(this::promptHighSequence, BAD_SEQUENCE_FORMAT_MSG);
 		InvalidInputHandler.promptIfInvalidValue(this::promptLowSequence, BAD_SEQUENCE_FORMAT_MSG);
-		int result = Algorithms.findindMaxSumOfPossibleDailyTasks(high, low, n);
+		int result = Algorithms.findingMaxSumOfPossibleDailyTasks(high, low, n);
 		System.out.println("This is your optimal quantity of tasks - " + result);
 	}
 

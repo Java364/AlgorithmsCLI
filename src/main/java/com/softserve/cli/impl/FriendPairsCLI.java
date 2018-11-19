@@ -6,6 +6,8 @@ import com.softserve.cli.CommandLineInterface;
 import com.softserve.cli.InvalidInputHandler;
 import com.softserve.cli.util.InputUtil;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class FriendPairsCLI extends AbstractCLI implements CommandLineInterface {
@@ -20,7 +22,7 @@ public class FriendPairsCLI extends AbstractCLI implements CommandLineInterface 
         System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                           algorithmOption.getOptionDescription());
         InvalidInputHandler.promptIfInvalidValue(this::promptFriendPairs, INVALID_NUMBER_MSG);
-        int friendPair = Algorithms.FriendPairs(friendPairs);
+        BigInteger friendPair = Algorithms.friendPairs(friendPairs);
         System.out.format("Friend pairs is %d\n", friendPair);
     }
 

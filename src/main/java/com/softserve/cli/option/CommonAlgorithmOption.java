@@ -4,14 +4,14 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
     EXIT("Exit", "Exiting..."),
     SORT("Sort menu", "Entering sorting menu..."),
     FIBONACCI("Fibonacci",
-              "The goal: To find which is the member of position n in Fibonacci sequence"),
+            "The goal: To find which is the member of position n in Fibonacci sequence"),
     LONGEST_SUBSEQUENCE("Longest subsequence with difference one",
-                        "The goal: To find how many numbers we have with difference one in the maximum sub sequence "),
+            "The goal: To find how many numbers we have with difference one in the maximum sub sequence "),
     TILING_THE_FLOOR("Ways to tile the floor", "Goal: Given a floor of size n x m and tiles of size 1 x m. The problem is to count the number of ways to tile the given floor using 1 x m tiles. A tile can either be placed horizontally or vertically."),
     PATH_WITHOUT_CROSSING("Paths without crossing", "The goal: Program to count number "
-    		+ "of ways to connect n (where n is even) "
-    		+ "points on a circle such that no two connecting lines cross each other "
-    		+ "and every point is connected with one other point."),
+            + "of ways to connect n (where n is even) "
+            + "points on a circle such that no two connecting lines cross each other "
+            + "and every point is connected with one other point."),
     WAYS_TO_SUM_USING_ARRAY("Ways to sum to N using array elements with repetition",
     		"The goal: To find how many ways we have "
     		+ "to represent one number with a given array of numbers"),
@@ -33,7 +33,8 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
 	LONGEST_POLIDROME("The longest palindromic subsequence", 
 			"Given a string which we have to check how many symbols has the biggest palindrome which is included in the given one."),
 	WAYS_TO_COVER_DISTANCE_IN_3_STEPS("Ways to cover in 3 steps",
-			"Given a distance ‘n', count total number of ways to cover the distance with 1, 2 and 3 steps. Enter the distance that equals or bigger then 2 :");
+			"Given a distance ï¿½n', count total number of ways to cover the distance with 1, 2 and 3 steps. Enter the distance that equals or bigger then 2 :");
+
 
     private String optionName;
     private String optionDescription;

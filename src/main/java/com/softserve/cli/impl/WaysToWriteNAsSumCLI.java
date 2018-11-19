@@ -6,6 +6,7 @@ import com.softserve.cli.CommandLineInterface;
 import com.softserve.cli.InvalidInputHandler;
 import com.softserve.cli.util.InputUtil;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class WaysToWriteNAsSumCLI extends AbstractCLI implements CommandLineInterface {
@@ -20,7 +21,7 @@ public class WaysToWriteNAsSumCLI extends AbstractCLI implements CommandLineInte
         System.out.printf("%s\n%s\n", algorithmOption.getOptionName(),
                           algorithmOption.getOptionDescription());
         InvalidInputHandler.promptIfInvalidValue(this::promptWaysToWriteNAsSum, INVALID_NUMBER_MSG);
-        int ways = Algorithms.FriendPairs(number);
+        int ways = Algorithms.waysToWriteNAsSumOfTwoOrMorePositiveIntegers(number);
         System.out.format("Ways to write number %d as sum is %d\n", number, ways);
     }
 
