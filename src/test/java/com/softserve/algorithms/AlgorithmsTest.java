@@ -168,4 +168,31 @@ public class AlgorithmsTest {
     public void testFindFibonacciMemberWhenStepIsNegativeOne() throws Exception {
         Algorithms.findFibonacciMember(8, -1);
     }
+	@Test
+	public void testWaysToSumUsingArrayOneElementArray() {
+		assertEquals(1, WaysToSumUsingArray.getAllCombinationsOfSum(new int[] { 1 }, 1));
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testWaysToSumArrayNegativeSum() throws Exception {
+             WaysToSumUsingArray.getAllCombinationsOfSum(new int[] {1,2,3}, -5);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testWaysToSumArrayNegativeElementOfSequence() throws Exception {
+             WaysToSumUsingArray.getAllCombinationsOfSum(new int[] {1,2,-3}, 5);
+	}
+	@Test
+	public void PathWithoutCrossingWithFourElements() {
+            assertEquals(5,PathWithoutCrossing.countPathsWithoutCrossing(6));
+	}
+	@Test
+	public void PathWithoutCrossingWithOddNumber() {
+            assertEquals(0,PathWithoutCrossing.countPathsWithoutCrossing(7));
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void PathWithoutCrossingWithNegativeCount() throws Exception{
+           PathWithoutCrossing.countPathsWithoutCrossing(-5);
+	}
+	
+	
 }

@@ -2,7 +2,7 @@ package com.softserve.algorithms;
 
 public class PathWithoutCrossing {
 	
-	public int countPathsWithoutCrossing (int numberPoints) throws IllegalArgumentException{
+	public static int countPathsWithoutCrossing (int numberPoints) throws IllegalArgumentException{
     	if(numberPoints < 0) {
     		throw new IllegalArgumentException("count of numbers cann't be negative");
     	}
