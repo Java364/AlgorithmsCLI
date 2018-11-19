@@ -152,5 +152,19 @@ public class AlgorithmsTest {
     	int expect = 6;
     	int input = 5;
     	assertEquals(expect, Algorithms.waysToWriteNAsSumOfTwoOrMorePositiveIntegers(input));
+		
+    @Test(expected = IllegalArgumentException.class)
+    public void testFindFibonacciMemberWhenStepIsBiggerThanNumber() throws Exception {
+        Algorithms.findFibonacciMember(0, 1);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testFindFibonacciMemberWhenStepIsBiggerThanOne() throws Exception {
+        Algorithms.findFibonacciMember(8, 2);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testFindFibonacciMemberWhenStepIsNegativeOne() throws Exception {
+        Algorithms.findFibonacciMember(8, -1);
     }
 }
