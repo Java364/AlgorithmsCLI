@@ -81,6 +81,12 @@ public class MainCommandLineInterface extends AbstractCLI implements CommandLine
                 case INTRESTING_ROW:
                       mainCLI = new InterstingRowCLI(prompt);
                       break;
+                case LONGEST_POLIDROME:
+                	mainCLI = new LongestPolidromeCLI(prompt);
+                	break;
+                case WAYS_TO_COVER_DISTANCE_IN_3_STEPS:
+                	mainCLI = new WayToCoverIn3StepsCLI(prompt);
+                	break;
 
             }
             runCliIfExitNotRequested(exitRequested);

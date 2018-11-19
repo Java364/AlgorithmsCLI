@@ -13,23 +13,28 @@ public enum CommonAlgorithmOption implements AlgorithmOption {
             + "points on a circle such that no two connecting lines cross each other "
             + "and every point is connected with one other point."),
     WAYS_TO_SUM_USING_ARRAY("Ways to sum to N using array elements with repetition",
-            "The goal: To find how many ways we have "
-                    + "to represent one number with a given array of numbers"),
-    PAINTING_THE_FENCE("Painting the fence", "The goal: Given a fence with n posts and k colors,"
-            + " find out the number of ways of painting the fence such that at most 2 adjacent posts have the same color. "),
-    OPTIMIZED_PAINTING_FENCE("Painting fence", "Goal: Given a fence with n posts and k colors, "
-            + "find out the number of ways of painting the fence such that at most 2 adjacent "
-            + "posts have the same color. "),
-    MAX_POSSIBLE_DAILY_TASKS("Work to be with High-effort or with Low-effort",
-            "The goal: We have n days and for each day (d) you could either perform a high effort"
-                    + " tasks (hi) or a low effort tasks (li) or no task with the constraint (it is"
-                    + " written 0) that you can choose a high-effort tasks only if you chose no task on "
-                    + "the previous day. Write a program to find the maximum amount of cost you can perform "
-                    + "within these n days."),
-    FRIEND_PAIRS("Friend pairs", "Goal: Given n friends, each one can remain single or can be paired up with some other friend. Each friend can be paired only once. Find out the total number of ways in which friends can remain single or can be paired up."),
-    WAYS_TO_WRITE_N_AS_SUM("Ways to write n as sum of two or more positive integers",
-            "The goal: To find in how many ways is possible to calculate n with positive integers."),
-    INTRESTING_ROW("Intresting row", "The goal: To find which is the member of position n in our interesting row.");
+    		"The goal: To find how many ways we have "
+    		+ "to represent one number with a given array of numbers"),
+    PAINTING_THE_FENCE("Painting the fence", "The goal: Given a fence with n posts and k colors," 
+    		+ " find out the number of ways of painting the fence such that at most 2 adjacent posts have the same color. "),
+    OPTIMIZED_PAINTING_FENCE("Painting fence", "Goal: Given a fence with n posts and k colors, " 
+    		+ "find out the number of ways of painting the fence such that at most 2 adjacent "
+    		+ "posts have the same color. "),
+    MAX_POSSIBLE_DAILY_TASKS("Work to be with High-effort or with Low-effort", 
+			"The goal: We have n days and for each day (d) you could either perform a high effort"
+    		+ " tasks (hi) or a low effort tasks (li) or no task with the constraint (it is"
+    		+ " written 0) that you can choose a high-effort tasks only if you chose no task on "
+    		+ "the previous day. Write a program to find the maximum amount of cost you can perform "
+    		+ "within these n days."),
+    FRIEND_PAIRS("Friend pairs", "The goal: To find in how many ways is possible to calculate n with positive integers. "),
+    WAYS_TO_WRITE_N_AS_SUM("Ways to write n as sum of two or more positive integers", 
+	         "The goal: To find in how many ways is possible to calculate n with positive integers."),
+    INTRESTING_ROW("Intresting row", "The goal: To find which is the member of position n in our interesting row."),
+	LONGEST_POLIDROME("The longest palindromic subsequence", 
+			"Given a string which we have to check how many symbols has the biggest palindrome which is included in the given one."),
+	WAYS_TO_COVER_DISTANCE_IN_3_STEPS("Ways to cover in 3 steps",
+			"Given a distance �n', count total number of ways to cover the distance with 1, 2 and 3 steps. Enter the distance that equals or bigger then 2 :");
+
 
     private String optionName;
     private String optionDescription;
