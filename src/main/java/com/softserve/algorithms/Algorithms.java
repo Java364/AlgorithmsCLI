@@ -13,23 +13,22 @@ public class Algorithms {
         }
         if ((step > number) || (step < 0) || (step > 1))
             throw new IllegalArgumentException("Incorrect step: " + step);
-        int[] fibonacciSeeds = initFibonacciSeeds(step);
-        int currentFibonacci = 0;
-        int upperBound = number - (step > 0 ? 1 : 0);
-        for (int i = 1; i <= upperBound; i++) {
+        int[] fibonacciSeeds = createFibonacciSeeds(step);
+        int currentFibonacci = 1;
+        for (int i = 1; i < number; i++) {
             currentFibonacci = fibonacciSeeds[0] + fibonacciSeeds[fibonacciSeeds.length - 1];
-            updateFibonacciSeed(fibonacciSeeds, currentFibonacci);
+            updateFibonacciSeeds(fibonacciSeeds, currentFibonacci);
         }
         return currentFibonacci;
     }
 
-    private static int[] initFibonacciSeeds(int step) {
+    private static int[] createFibonacciSeeds(int step) {
         int[] fibonacciSeeds = new int[step + 2];
         fibonacciSeeds[fibonacciSeeds.length - 1] = 1;
         return fibonacciSeeds;
     }
 
-    private static void updateFibonacciSeed(int[] fibonacciSeeds, int currentFibonacci) {
+    private static void updateFibonacciSeeds(int[] fibonacciSeeds, int currentFibonacci) {
         int lastSeedIndex = fibonacciSeeds.length - 1;
         System.arraycopy(fibonacciSeeds, 1, fibonacciSeeds, 0, lastSeedIndex);
         fibonacciSeeds[lastSeedIndex] = currentFibonacci;
@@ -119,7 +118,7 @@ public class Algorithms {
         return solutions[N];
     }
     public static BigInteger friendPairs(int N) throws IllegalArgumentException {
-        if (N < 0) {
+        if (N <= 0) {
             throw new IllegalArgumentException();
         }
         BigInteger f[] = new BigInteger[N + 1];

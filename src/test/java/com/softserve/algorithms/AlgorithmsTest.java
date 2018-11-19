@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
@@ -46,19 +47,26 @@ public class AlgorithmsTest {
     }
 
     @Test
-    public void testFindFibonacciMember() {
+    public void testFindFibonacciMemberWithStepZero() {
         int expectedResult = 8;
-        int actualResult = Algorithms.findFibonacciMember(5, 0);
+        int actualResult = Algorithms.findFibonacciMember(6, 0);
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void testFindFibonacciMemberWithStepOne() {
+        int expectedResult = 4;
+        int actualResult = Algorithms.findFibonacciMember(6, 1);
         Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testFindFibonacciMemberWithNegativeNumber() throws Exception {
+    public void testFindFibonacciMemberWithNegativeNumber() {
         Algorithms.findFibonacciMember(-34, 0);
     }
 
     @Test(expected = NullPointerException.class)
-    public void testFindLongestSubsetWithNullValue() throws Exception {
+    public void testFindLongestSubsetWithNullValue() {
         Algorithms.longestSubset(null);
     }
 
@@ -155,19 +163,20 @@ public class AlgorithmsTest {
     }
     
     @Test(expected = IllegalArgumentException.class)
-    public void testFindFibonacciMemberWhenStepIsBiggerThanNumber() throws Exception {
+    public void testFindFibonacciMemberWhenStepIsBiggerThanNumber() {
         Algorithms.findFibonacciMember(0, 1);
     }
     
     @Test(expected = IllegalArgumentException.class)
-    public void testFindFibonacciMemberWhenStepIsBiggerThanOne() throws Exception {
+    public void testFindFibonacciMemberWhenStepIsBiggerThanOne() {
         Algorithms.findFibonacciMember(8, 2);
     }
     
     @Test(expected = IllegalArgumentException.class)
-    public void testFindFibonacciMemberWhenStepIsNegativeOne() throws Exception {
+    public void testFindFibonacciMemberWhenStepIsNegativeOne() {
         Algorithms.findFibonacciMember(8, -1);
     }
+
 	@Test
 	public void testWaysToSumUsingArrayOneElementArray() {
 		assertEquals(1, WaysToSumUsingArray.getAllCombinationsOfSum(new int[] { 1 }, 1));
@@ -193,6 +202,25 @@ public class AlgorithmsTest {
 	public void PathWithoutCrossingWithNegativeCount() throws Exception{
            PathWithoutCrossing.countPathsWithoutCrossing(-5);
 	}
-	
-	
+    @Test
+    public void testlongestPalindromeSubseq(){
+        int expected = 7;
+        int result = Algorithms.longestPalindromeSubseq("AABBCDDDEEEEEEE");
+        assertEquals(expected,result);
+    }
+    @Test
+    public void testwaysToCoverIn3StepsAlgorithm(){
+        int expected = 7;
+        int result = Algorithms.waysToCoverIn3StepsAlgorithm(4);
+        assertEquals(expected,result);
+    }
+    @Test(expected = NullPointerException.class)
+    public void testlongestPalindromeSubseqException(){
+        Algorithms.longestPalindromeSubseq("");
+    }
+    @Test(expected = Exception.class)
+    public void testwaysToCoverIn3StepsAlgorithmException(){
+        Algorithms.waysToCoverIn3StepsAlgorithm(1);
+    }
+
 }
