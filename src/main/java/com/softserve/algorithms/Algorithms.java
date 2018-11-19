@@ -105,7 +105,7 @@ public class Algorithms {
         return solutions[N];
     }
     public static BigInteger friendPairs(int N) throws IllegalArgumentException {
-        if (N < 0) {
+        if (N <= 0) {
             throw new IllegalArgumentException();
         }
         BigInteger f[] = new BigInteger[N + 1];
