@@ -21,7 +21,7 @@ public class WaysToSumUsingArrayCLI extends AbstractCLI implements CommandLineIn
         System.out.printf("%s\n%s\n", algorithmOption.getOptionName(), algorithmOption.getOptionDescription());
         InvalidInputHandler.promptIfInvalidValue(this::promptSequence, BAD_SEQUENCE_FORMAT_MSG);
         InvalidInputHandler.promptIfInvalidValue(this::promptSum, INVALID_NUMBER_MSG);
-        int result = new WaysToSumUsingArray().getAllCombinationsOfSum(parsedSequence, sum);
+        int result = WaysToSumUsingArray.getAllCombinationsOfSum(parsedSequence, sum);
         System.out.format("To represent %d we can such ways: %d\n", sum, result);
     }
 
