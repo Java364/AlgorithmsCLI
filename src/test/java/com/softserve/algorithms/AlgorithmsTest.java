@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
@@ -11,31 +12,31 @@ import static org.junit.Assert.assertEquals;
 public class AlgorithmsTest {
 
     @Test(expected = NegativeArraySizeException.class)
-    public void testfindingMaxSumOfPossibleDailyTasks(){
+    public void testFindingMaxSumOfPossibleDailyTasks(){
         Algorithms.findingMaxSumOfPossibleDailyTasks(new int[]{1,2,5,7},new int[]{10,4,3,1,7},-9);
     }
     @Test (expected = IllegalArgumentException.class)
-    public void testfindingMaxSumOfPossibleDailyTasks1(){
+    public void testFindingMaxSumOfPossibleDailyTasks1(){
         Algorithms.findingMaxSumOfPossibleDailyTasks(new int[]{1,2,-15,7},new int[]{10,4,3,1,7},6);
     }
     @Test
-    public void testfindingMaxSumOfPossibleDailyTasks2(){
+    public void testFindingMaxSumOfPossibleDailyTasks2(){
         int expectedResult = 20;
         int actualResult = Algorithms.findingMaxSumOfPossibleDailyTasks(new int[]{3,6,8,7,6},new int[]{1,5,4,5,3},5);
         Assert.assertEquals(expectedResult,actualResult);
     }
     @Test (expected = IllegalArgumentException.class)
-    public void testfindingMaxWaysOfPaintingTheFence(){
+    public void testFindingMaxWaysOfPaintingTheFence(){
         Algorithms.findingMaxWaysOfPaintingTheFence(4,0);
     }
     @Test
-    public void testfindingMaxWaysOfPaintingTheFence1(){
+    public void testFindingMaxWaysOfPaintingTheFence1(){
         BigDecimal expectedResult = new BigDecimal(16);
        BigDecimal actualResult = Algorithms.findingMaxWaysOfPaintingTheFence(2,4);
        Assert.assertEquals(expectedResult,actualResult);
     }
     @Test
-    public void testfindingMaxWaysOfPaintingTheFence2(){
+    public void testFindingMaxWaysOfPaintingTheFence2(){
          Algorithms.findingMaxWaysOfPaintingTheFence(21,2147483647);
 
     }
@@ -118,7 +119,6 @@ public class AlgorithmsTest {
         Algorithms.countWaysToTileTheFloor(2, 1);
     }
 
-    //testing interesting row method
     @Test (expected = IllegalArgumentException.class)
     public void testInterestingRowNegativeNumber() {
     	Algorithms.interestingRow(-3);
@@ -142,7 +142,6 @@ public class AlgorithmsTest {
     	Algorithms.interestingRow(0);
     }
     
-    //testing waysToWriteNAsSumOfTwoOrMorePositiveIntegers method
     @Test(expected = IllegalArgumentException.class)
     public void testWaysToWriteNAsSumOfTwoOrMorePositiveIntegersNegativeNumber() {
     	Algorithms.waysToWriteNAsSumOfTwoOrMorePositiveIntegers(-6);
@@ -186,41 +185,76 @@ public class AlgorithmsTest {
 	public void testWaysToSumArrayNegativeSum() throws Exception {
              WaysToSumUsingArray.getAllCombinationsOfSum(new int[] {1,2,3}, -5);
 	}
+
 	@Test(expected = IllegalArgumentException.class)
 	public void testWaysToSumArrayNegativeElementOfSequence() throws Exception {
              WaysToSumUsingArray.getAllCombinationsOfSum(new int[] {1,2,-3}, 5);
 	}
+
 	@Test
 	public void PathWithoutCrossingWithFourElements() {
             assertEquals(5,PathWithoutCrossing.countPathsWithoutCrossing(6));
 	}
+
 	@Test
 	public void PathWithoutCrossingWithOddNumber() {
             assertEquals(0,PathWithoutCrossing.countPathsWithoutCrossing(7));
 	}
+
 	@Test(expected = IllegalArgumentException.class)
 	public void PathWithoutCrossingWithNegativeCount() throws Exception{
            PathWithoutCrossing.countPathsWithoutCrossing(-5);
 	}
+
     @Test
-    public void testlongestPalindromeSubseq(){
+    public void testLongestPalindromeSubseq(){
         int expected = 7;
         int result = Algorithms.longestPalindromeSubseq("AABBCDDDEEEEEEE");
         assertEquals(expected,result);
     }
+
     @Test
-    public void testwaysToCoverIn3StepsAlgorithm(){
+    public void testWaysToCoverIn3StepsAlgorithm(){
         int expected = 7;
         int result = Algorithms.waysToCoverIn3StepsAlgorithm(4);
         assertEquals(expected,result);
     }
+
     @Test(expected = NullPointerException.class)
-    public void testlongestPalindromeSubseqException(){
+    public void testLongestPalindromeSubseqException(){
         Algorithms.longestPalindromeSubseq("");
     }
+
     @Test(expected = Exception.class)
-    public void testwaysToCoverIn3StepsAlgorithmException(){
+    public void testWaysToCoverIn3StepsAlgorithmException(){
         Algorithms.waysToCoverIn3StepsAlgorithm(1);
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void testFriendPairsNumberIsNull() {
+        Algorithms.friendPairs(0);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testFriendPairsNumberIsNegative() {
+        Algorithms.friendPairs(-100);
+    }
+
+    @Test
+    public void testFriendPairsNumberIsThree() {
+        BigInteger expected = new BigInteger("4");
+
+        BigInteger actual = Algorithms.friendPairs(3);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFriendPairsNumberBigNumber() {
+        BigInteger expected = new BigInteger("3672465781624551101825551243452039360153822596927411430303149111294268994479836539812914929926051742195976052634803552073005191131189152985503070701365227435309803806437354667813397115726462976");
+
+        BigInteger actual = Algorithms.friendPairs(200);
+
+        assertEquals(expected, actual);
+    }
 }
